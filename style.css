@@ -1,0 +1,39 @@
+.skaterInfoTitle{
+  font-family: sans-serif;
+  text-align:center;
+}
+.skaterInfo{
+  font-family: sans-serif;
+  text-align:center;
+  padding: 20px 20px 20px 20px;
+  font color: black;
+}
+.IceTimeTitle{
+  font-family: sans-serif;
+  text-align:center;
+}
+
+.contract{
+  font-family: sans-serif;
+  display: block;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 40px; /* Firefox */
+  column-gap: 40px;
+}
+#wrapper{
+  background-color: white;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+
+}
+body{
+background-color: #448490;
+}
+
+.js{
+background-color: #448490;
+}
