@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	   <title>Contact</title>
+	   <meta charset="utf-8">
+	   <link href="css/style.css" rel="stylesheet">
+    </head> 
+    <body class="contact-body">
+    	<div class="contact-container">
+	    	<div class="contact-header" >
+				<a href="http://ecfigureskate.org"><img src="http://www.ecfigureskate.org/_/rsrc/1472783675676/config/customLogo.gif?revision=3" ></a>
+	    	</div>
+	    	<div class="contact-info" >
+	    		<div class="contact-info-container" >
+		    		<h1>Contact</h1>
+		    		<h3>Address: 915 Menomonie St, Eau Claire, WI 54703</h3>
+		    		<h3>Phone: 715-874-4877</h3>
+		    	</div>
+	    	</div>
+	    	<div class="row" >
+		    	<div class="contact-column" >
+		    		<div id="map"></div>
+		    	</div>
+		    	<div class="contact-column" >
+		    		<h3>Ask us a question by using the form below:</h3>
+					<form action="/contact" method="post" >
+						<ul class="contact-form">
+						    <li>
+						    	<label>Full Name <span class="req">*</span></label>
+						    	<input type="text" name="firstName" class="split-input" placeholder="First" />
+						    	<input type="text" name="lastName" class="split-input" placeholder="Last" />
+						    </li>
+						    <li>
+						        <label>Email <span class="req">*</span></label>
+						        <input type="email" name="email" class="long-input" />
+						    </li>
+						    <li>
+						        <label>Subject</label>
+						        <select name="subject" class="long-input">
+						        	<option value="general">General Question</option>
+						        	<option value="price">Price</option>
+						        	<option value="schedule">Schedule</option>
+						        	<option value="classes">Classes</option>
+						        	<option value="testing">Testing</option>
+						        	<option value="competition">Competition</option>
+						        </select>
+						    </li>
+						    <li>
+						        <label>Message <span class="req">*</span></label>
+						        <textarea name="message" id="message" class="long-input"></textarea>
+						    </li>
+						    <li>
+						        <input type="submit" value="Submit" />
+						    </li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			var pos, map, id;
+			function hobbsMap() {
+				pos = {lat: 44.8004122, lng: -91.520933};
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: pos,
+					zoom: 14
+				});
+				id = 'ChIJNyejrYG9-IcRQy4UJguuK68';
+				var infowindow = new google.maps.InfoWindow();
+				var service = new google.maps.places.PlacesService(map);
+				service.getDetails({
+					placeId: id
+				}, function(place, status) {
+			          if (status === google.maps.places.PlacesServiceStatus.OK) {
+			              var marker = new google.maps.Marker({
+			                map: map,
+			                position: place.geometry.location
+			              });
+			              google.maps.event.addListener(marker, 'click', function() {
+			                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+			                  place.formatted_address + '</div>');
+			                infowindow.open(map, this);
+			              });
+			          }
+				})
+			}
+			function addMapMarker(place, status) {
+				if (status == google.maps.places.PlacesServiceStatus.OK) {
+			        var marker = new google.maps.Marker({
+			          map: map,
+			          position: place.location
+			        });
+	
+			        google.maps.event.addListener(marker, 'click', function() {
+			          infowindow.setContent(place.name);
+			          infowindow.open(map, this);
+			        });
+				}
+			}
+		</script>
+		<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAeqJMPfvVOaXJ37xycH0dL1olvul_wOJg&callback=hobbsMap&libraries=places"></script>
+    </body>
+</html>

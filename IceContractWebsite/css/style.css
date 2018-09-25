@@ -41,5 +41,116 @@ fieldset {
   
 }
 
+.contact-container {
+	background-color: #ffffff;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.contact-info-container {
+	width: 30%;
+	margin: 0 auto;
+	padding-bottom: 5em;
+}
+
+.contact-info h1 {
+	text-align: center;
+}
+
+.contact-info h2, h3{
+	width: 100%;
+	text-align: left;
+	margin: 0 auto;
+}
+
+.contact-header {
+	text-align: center;
+	width: 100%;
+	background-image: url('http://www.ecfigureskate.org/_/rsrc/1472783673928/config/ice.jpg.1379908050358.jpg');
+	background-position: center center;
+	background-repeat: repeat;
+	margin: 0 auto;
+}
+
+.contact-column {
+    float: left;
+    width: 45%;
+    padding: 20px;
+}
+
+.row {
+	height: 100%;
+	width: 80%;
+	margin: 0 auto;
+	background-color: #ffffff;
+	padding-bottom: 10em;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.contact-body {
+	background-color: #448490;
+}
+
+.contact-form {
+    margin: 10px auto;
+    max-width: 500px;
+    padding: 15px 15px 10px 15px;
+}
+
+.contact-form .req {
+    color:red;
+}
+
+.contact-form .split-input {
+    width: 48%;
+}
+
+.contact-form .long-input {
+    width: 98%;
+}
+
+.form-style-1 textarea {
+    height: 200px;
+}
+
+.contact-form input[type=submit], 
+.contact-form input[type=button] {
+    background: #448490;
+    padding: 5px 15px 5px 15px;
+    border: none;
+    color: #ffffff;
+}
+
+.contact-form input[type=submit]:hover, 
+.contact-form input[type=button]:hover {
+    background: #316068;
+    box-shadow: none;
+}
+
+.contact-form label {
+    margin: 0 0 3px 0;
+    padding: 0px;
+    display: block;
+    font-weight: bold;
+}
+
+.contact-form li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+
+#map {
+	width: 350px;
+	height: 350px;
+	position: relative;
+}
 
 
