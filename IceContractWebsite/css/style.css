@@ -1,0 +1,45 @@
+#userForm {
+  list-style-type: none; 
+}
+
+#skaterForm{
+  margin: 0 auto;
+  padding 10em;
+  border-radius: 5em;
+  
+}
+
+#userForm ul li {
+  
+  border-bottom: 10px;
+}
+
+
+#userForm input {
+  font: 1em sans-serif;
+  height: 20px;
+  width: 300px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  
+}
+
+#userForm label {
+  font: 1em sans-serif;
+}
+
+#pair {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  z-index: -10;
+  
+}
+
+fieldset {
+  border-style: none;
+  
+}
+
+
+
