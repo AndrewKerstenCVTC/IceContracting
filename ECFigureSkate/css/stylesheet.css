@@ -1,0 +1,137 @@
+html{
+  background-color: green;
+  background-image: url("ice_background2.jpg");
+  background: no-repeat;
+  opacity: 0.8;
+
+}
+
+body {
+  background-color: aliceblue;
+}
+
+#Title {
+  font-family: cursive;
+  font-size: 25px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  text-align: right;
+  position: relative;
+  
+}
+
+/*header {
+  text-align: center;
+}
+*/
+
+#logo {
+  position: relative;
+  text-align: right;
+  display: block;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: cadetblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: aliceblue;
+}
+
+.Sponsors {
+  text-align: left;
+  font-size: 25px;
+  color: white;
+  
+}
+
+.section1 {
+  font-size: 16px;
+}
+
+.Gold {
+  font-size: 20px;
+  color: cadetblue;
+}
+
+.Silver {
+  font-size: 20px;
+  color: cadetblue;
+
+}
+
+.Bronze {
+  font-size: 20px;
+  color: cadetblue;
+}
+
+#SkatePic {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.footer {
+    background-color: aliceblue;
+    padding: 5px;
+    text-align: center;
+	color: black;
+	font: 12px "HelveticaNeue";
+	font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+	width: 100%;
+	display: inline-block;
+
+}
+
+.footerinfo1 {
+    float: left;
+	text-align: center;
+	display: inline;
+	alink: black;
+	vlink: black;
+	color: black;
+    width: 30%;
+}
+
+.footerinfo3 {
+    float: left;
+	text-align: center;
+	display: inline;
+	padding-right: 50px;
+    width: 30%;
+
+}
+
+.footerinfo4 {
+	float: right;
+	text-align: center;
+	display: inline;
+	padding-right: 50px;
+    width: 30%;
+}
+
+	
+
