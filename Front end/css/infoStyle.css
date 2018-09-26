@@ -42,7 +42,6 @@ fieldset {
 }
 
 .contact-container {
-	background-color: #ffffff;
 	width: 80%;
 	height: 100%;
 	margin: 0 auto;
@@ -67,23 +66,19 @@ fieldset {
 .contact-header {
 	text-align: center;
 	width: 100%;
-	background-image: url('http://www.ecfigureskate.org/_/rsrc/1472783673928/config/ice.jpg.1379908050358.jpg');
-	background-position: center center;
-	background-repeat: repeat;
 	margin: 0 auto;
 }
 
 .contact-column {
     float: left;
-    width: 45%;
+    width:40%;
     padding: 20px;
 }
 
 .row {
 	height: 100%;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
-	background-color: #ffffff;
 	padding-bottom: 10em;
 }
 
