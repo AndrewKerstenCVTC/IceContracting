@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Ice Sessions Test</title>
+</head>
+<body>
+	<h1>Ice Sessions Test</h1>
+	<button onclick="fetchSessions()">Fetch Sessions</button>
+	<div id="sessionList"></div>
+	<script>
+		function fetchSessions() {
+			// Production server address
+			fetch("http://199.223.235.232:8080/IceServer/Sessions")
+				.then(function(response) {
+					return response.json();
+				})
+				.then(function(sessions) {
+					// sessions is a json object
+					console.log(sessions);
+
+					// iterate over the sessions and add them to the sessionsList div as checkboxes displaying the session time
+					let html = "";
+
+					for (let sessionIndex in sessions) {
+						let sessionId = sessions[sessionIndex].sessionId;
+						let sessionDateTime = new Date(sessions[sessionIndex].dateTime);
+
+						html += '<p>';
+						html += '<input type="checkbox" name="sessions" value="' + sessionId + '" />';
+						html += '<label for="' + sessionId + '">' + sessionDateTime + '</label>';
+						html += '</p>';
+					}
+
+					document.getElementById("sessionList").innerHTML = html;
+				});
+		}
+	</script>
+</body>
+</html>
