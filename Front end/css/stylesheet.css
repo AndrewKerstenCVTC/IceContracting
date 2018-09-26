@@ -3,7 +3,7 @@ html{
   background-image: url("ice_background2.jpg");
   background: no-repeat;
   opacity: 0.8;
-
+  font-family: sans-serif
 }
 
 body {
@@ -71,7 +71,7 @@ li a:hover {
   background-color: #f8feff;
   width: 50em;
   margin-top: 1em;
-  margin-left: .5em;
+  margin-left: 4em;
 }
 .Sponsors {
   font-size: 25px;
@@ -81,22 +81,6 @@ li a:hover {
 
 .section1 {
   font-size: 16px;
-}
-
-.Gold {
-  font-size: 20px;
-  color: cadetblue;
-}
-
-.Silver {
-  font-size: 20px;
-  color: cadetblue;
-
-}
-
-.Bronze {
-  font-size: 20px;
-  color: cadetblue;
 }
 
 #SkatePic {
@@ -116,7 +100,7 @@ li a:hover {
 	font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 	width: 100%;
 	display: inline-block;
-
+    margin-top: 2em;
 }
 
 .footerinfo1 {
@@ -146,7 +130,7 @@ li a:hover {
     width: 30%;
 }
 #main{
-  width: 50%;
+  width: 90%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -172,8 +156,8 @@ td, th, table{
   border: 1px solid cadetblue;
 }
 td, th{
-  padding: 5px;
-  width: 15em
+  padding: 5px 0 5px 0;
+  width: 13%
 }
 #scheduleMain h2{
   font-family: cursive;
@@ -185,3 +169,45 @@ td, th{
   margin-top: 0;
   font-size: 1.5em;
 }
+.contact-column{
+  background-color: red;
+}
+.contact-container{
+  background-color: #c1e3ff
+}
+#contactForm{
+  margin-bottom: 3em;
+}
+#contactForm h3{
+  text-align: center;
+}
+#map{
+  margin-left: auto;
+  margin-right: auto;
+}
+#gold{
+  float: left
+}
+#silver{
+  margin-left: auto;
+  margin-right: auto;
+}
+#bronze{
+  float: right;
+  margin-top: 0;
+}
+.sponsor{
+  width: 30%;
+  display: inline-block;
+}
+.hSponsor{
+  font-size: 30px;
+  color: cadetblue;
+  font-family: cursive;
+  text-decoration: underline;
+}
+
+
+
+
+
