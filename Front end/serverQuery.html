@@ -27,8 +27,8 @@
 						let sessionDateTime = new Date(sessions[sessionIndex].dateTime);
 
 						html += '<p>';
-						html += '<input type="checkbox" name="sessions" value="' + sessionId + '" />';
-						html += '<label for="' + sessionId + '">' + sessionDateTime + '</label>';
+						html += '<input type="checkbox" id="session' + sessionId + '" name="sessions" value="' + sessionId + '" />';
+						html += '<label for="session' + sessionId + '">' + sessionDateTime + '</label>';
 						html += '</p>';
 					}
 
