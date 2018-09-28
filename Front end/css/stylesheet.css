@@ -20,10 +20,12 @@ body {
   
 }
 
-/*header {
-  text-align: center;
+header {
+  /*background-image: url("../images/ice-background-1.jpg");
+  background-repeat: no-repeat;*/
+  
 }
-*/
+
 
 #logo {
   position: relative;
@@ -74,9 +76,11 @@ li a:hover {
   margin-left: 4em;
 }
 .Sponsors {
-  font-size: 25px;
+  font-size: 3em;
   color: cadetblue;
-  
+  font-family: cursive;
+  text-decoration: underline;
+  margin-bottom: 10px
 }
 
 .section1 {
@@ -88,6 +92,7 @@ li a:hover {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   width: 80%;
 }
 
@@ -100,7 +105,7 @@ li a:hover {
 	font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 	width: 100%;
 	display: inline-block;
-    margin-top: 2em;
+    margin-top: 5em;
 }
 
 .footerinfo1 {
@@ -186,28 +191,48 @@ td, th{
   margin-right: auto;
 }
 #gold{
-  float: left
+  float: left;
+  background-image: url("../images/gold-final.png");
 }
 #silver{
   margin-left: auto;
   margin-right: auto;
+  background-image: url("../images/silver-final.png");
 }
 #bronze{
   float: right;
   margin-top: 0;
+  background-image: url("../images/bronze-final.png");
 }
 .sponsor{
-  width: 30%;
+  width: 294px;
   display: inline-block;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 542px;
+  padding-top: 1em;
+  box-shadow: 8px 8px 14px #23537b;
 }
 .hSponsor{
   font-size: 30px;
-  color: cadetblue;
+  color: black;
   font-family: cursive;
   text-decoration: underline;
+  opacity: .55
 }
-
-
-
+.pSponsor{
+  padding-left: 1em;
+  padding-right: 1em;
+  opacity: .55;
+  font-family: serif;
+  font-size: 1.37em
+}
+#Sponsor{
+  margin-bottom: 4em;
+}
+#intro{
+  margin-top: 0
+}
 
 
