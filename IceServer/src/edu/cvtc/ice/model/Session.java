@@ -2,32 +2,44 @@ package edu.cvtc.ice.model;
 
 public class Session
 {
-	private long sessionId;
-	private long dateTime;
+	private long id;
+	private long date;
+	private char type;
 	
-	public Session(long sessionId, long dateTime)
+	public Session(long id, long date, char type)
 	{
-		setSessionId(sessionId);
-		setDateTime(dateTime);
+		setId(id);
+		setDate(date);
+		setType(type);
+	}
+	
+	public long getId()
+	{
+		return id;
 	}
 
-	public long getSessionId()
+	public void setId(long id)
 	{
-		return sessionId;
+		this.id = id;
 	}
 
-	private void setSessionId(long sessionId)
+	public long getDate()
 	{
-		this.sessionId = sessionId;
+		return date;
 	}
 
-	public long getDateTime()
+	public void setDate(long date)
 	{
-		return dateTime;
+		this.date = date;
 	}
 
-	private void setDateTime(long dateTime)
+	public char getType()
 	{
-		this.dateTime = dateTime;
+		return type;
+	}
+
+	public void setType(char type)
+	{
+		this.type = type;
 	}
 }

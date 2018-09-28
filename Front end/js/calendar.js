@@ -3,12 +3,26 @@ function buildCalendar(year, month) {
 	let dateLast = new Date(year, month + 1, 0);
 
 	let monthShortName = dateFirst.toLocaleString("en-us", { month: "short" });
+	let monthLongName = dateFirst.toLocaleString("en-us", { month: "long" });
 
-	let html = "";
-
-	html += '<table><thead><tr><th colspan="7">'
-	html += dateFirst.toLocaleString("en-us", { month: "long" });
-	html += '</th></tr></thead><tbody><tr><td>Sunday</td><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td></tr>';
+	let html = `
+		<table>
+			<thead>
+				<tr>
+					<th colspan="7">${monthLongName}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sunday</td>
+					<td>Monday</td>
+					<td>Tuesday</td>
+					<td>Wednesday</td>
+					<td>Thursday</td>
+					<td>Friday</td>
+					<td>Saturday</td>
+				</tr>
+	`;
 
 	let dates = [];
 
@@ -54,10 +68,14 @@ function buildCalendar(year, month) {
 			return;
 		}
 
-		html += '<td id="';
-		html += monthShortName + date;
-		html += '">';
-		html += date;
-		html += '</td>';
+		let cellId = monthShortName + date;
+
+		html += `
+			<td>
+				<div>${date}</div>
+				<ul id=${cellId}>
+				</ul>
+			</td>
+		`;
 	}
 }
