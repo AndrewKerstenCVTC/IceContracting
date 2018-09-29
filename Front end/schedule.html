@@ -56,7 +56,7 @@
         for (let sessionIndex in sessions) {
           let date = new Date(sessions[sessionIndex].date);
           let element = document.getElementById(date.toLocaleString("en-us", { month: "short" }) + date.getDate());
-          element.innerHTML += "<li>" + date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true }) + "</li>";
+          element.innerHTML += "<li>" + date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true }) + " " + sessions[sessionIndex].attending + "/25</li>";
         }
       });
   </script>

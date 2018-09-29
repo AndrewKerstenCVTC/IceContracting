@@ -5,12 +5,14 @@ public class Session
 	private long id;
 	private long date;
 	private char type;
+	private int attending;
 	
-	public Session(long id, long date, char type)
+	public Session(long id, long date, char type, int attending)
 	{
 		setId(id);
 		setDate(date);
 		setType(type);
+		setAttending(attending);
 	}
 	
 	public long getId()
@@ -41,5 +43,15 @@ public class Session
 	public void setType(char type)
 	{
 		this.type = type;
+	}
+	
+	public int getAttending()
+	{
+		return this.attending;
+	}
+	
+	public void setAttending(int attending)
+	{
+		this.attending = attending;
 	}
 }

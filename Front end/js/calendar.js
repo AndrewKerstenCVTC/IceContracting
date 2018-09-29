@@ -9,19 +9,19 @@ function buildCalendar(year, month) {
 		<table>
 			<thead>
 				<tr>
-					<th colspan="7">${monthLongName}</th>
+					<th colspan="7">${monthLongName} ${year}</th>
+				</tr>
+				<tr>
+					<th>Sunday</th>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+					<th>Saturday</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Sunday</td>
-					<td>Monday</td>
-					<td>Tuesday</td>
-					<td>Wednesday</td>
-					<td>Thursday</td>
-					<td>Friday</td>
-					<td>Saturday</td>
-				</tr>
 	`;
 
 	let dates = [];
