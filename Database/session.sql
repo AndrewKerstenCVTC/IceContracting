@@ -1,0 +1,5 @@
+CREATE TABLE Session(
+    SessionID INTEGER NOT NULL PRIMARY KEY,
+    DateTime INTEGER NOT NULL,
+    Type CHAR(1) NOT NULL
+);

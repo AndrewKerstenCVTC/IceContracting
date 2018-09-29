@@ -53,11 +53,13 @@ public class SessionsServlet extends HttpServlet
 		// Header needed for cross origin requests
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		
+		String queryString = "SELECT Session.SessionID, Session.DateTime, Session.Type, COUNT(Attendance.SessionID) AS Attending FROM Session LEFT JOIN Attendance on Attendance.SessionID = Session.SessionID GROUP BY Session.SessionID;";
+		
 		// Establish a connection to the database
 		try
 		(
 			Connection connection = dataSource.getConnection();
-			PreparedStatement query = connection.prepareStatement("SELECT * FROM Session;");
+			PreparedStatement query = connection.prepareStatement(queryString);
 			ResultSet result = query.executeQuery();
 		)
 		{
@@ -67,8 +69,9 @@ public class SessionsServlet extends HttpServlet
 			{
 				long sessionID = result.getLong("SessionID");
 				long dateTime = result.getLong("DateTime");
+				int attending = result.getInt("Attending");
 				
-				sessions.add(new Session(sessionID, dateTime, 'f'));
+				sessions.add(new Session(sessionID, dateTime, 'f', attending));
 			}
 			
 			response.getWriter().append(gson.toJson(sessions));
