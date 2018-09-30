@@ -2,8 +2,9 @@ package edu.cvtc.ice.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.Instant;
 import java.util.ArrayList;
 
 import javax.servlet.ServletConfig;
@@ -49,22 +50,31 @@ public class SessionsServlet extends HttpServlet
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		// Header needed for cross origin requests
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		
+		String queryString = "SELECT Session.SessionID, Session.DateTime, Session.Type, COUNT(Attendance.SessionID) AS Attending FROM Session LEFT JOIN Attendance on Attendance.SessionID = Session.SessionID GROUP BY Session.SessionID;";
+		
 		// Establish a connection to the database
-		try (Connection connection = dataSource.getConnection())
+		try
+		(
+			Connection connection = dataSource.getConnection();
+			PreparedStatement query = connection.prepareStatement(queryString);
+			ResultSet result = query.executeQuery();
+		)
 		{
-			// Database doesn't currently contain any data.
-			// Return some dummy data for testing.
 			ArrayList<Session> sessions = new ArrayList<>();
 			
-			for (int i = 0; i < 8; i++)
+			while (result.next())
 			{
-				sessions.add(new Session(i, Instant.now().toEpochMilli()));
+				long sessionID = result.getLong("SessionID");
+				long dateTime = result.getLong("DateTime");
+				int attending = result.getInt("Attending");
+				
+				sessions.add(new Session(sessionID, dateTime, 'f', attending));
 			}
 			
 			response.getWriter().append(gson.toJson(sessions));
-			
-			// Header needed for cross origin requests
-			response.addHeader("Access-Control-Allow-Origin", "*");
 		}
 		catch (SQLException ex)
 		{

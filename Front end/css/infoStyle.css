@@ -53,10 +53,12 @@ body {
 
 #skatercontact input[type="text"],
 #skatercontact input[type="email"],
+#skatercontact input[type="number"],
 #skatercontact textarea,
 #skatercontact button[type="submit"] {
   font: 400 14px/16px "Roboto", Helvetica, Arial, sans-serif;
 }
+
 
 #skatercontact {
   background: #F9F9F9;
@@ -82,6 +84,7 @@ body {
 
 #skatercontact input[type="text"],
 #skatercontact input[type="email"],
+#skatercontact input[type="number"],
 #skatercontact textarea {
   width: 95%;
   border: 2px solid #ccc;

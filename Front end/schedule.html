@@ -47,5 +47,18 @@
       </form>
     </ul>
   </div>
+  <script>
+    fetch("http://199.223.235.232:8080/IceServer/Sessions")
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(sessions) {
+        for (let sessionIndex in sessions) {
+          let date = new Date(sessions[sessionIndex].date);
+          let element = document.getElementById(date.toLocaleString("en-us", { month: "short" }) + date.getDate());
+          element.innerHTML += "<li>" + date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true }) + " " + sessions[sessionIndex].attending + "/25</li>";
+        }
+      });
+  </script>
 </body>
 </html>
