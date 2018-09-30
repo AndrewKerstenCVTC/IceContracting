@@ -239,3 +239,118 @@ table li {
   background-color: #d5fdd5;
   cursor: pointer;
 }
+
+// contact.html styles - start
+.contact-container {
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	background-color: #d5e8f8;
+}
+
+.contact-info h1 {
+	text-align: center;
+}
+
+.contact-info h2, h3{
+	width: 100%;
+	text-align: left;
+	margin: 0 auto;
+}
+
+.contact-column h3 {
+	text-align: center;	
+	padding-bottom: 1em;
+}
+
+.contact-column {
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+.row {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.contact-form {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 15px 15px 10px 15px;
+    border: 1px solid #d5e8f8;
+}
+
+.contact-form .req {
+    color:red;
+}
+
+.contact-form .split-input {
+    width: 48%;
+}
+
+.contact-form .long-input {
+    width: 98%;
+}
+
+.contact-form textarea {
+    height: 5em;
+}
+
+.contact-form input[type=submit], 
+.contact-form input[type=button] {
+    padding: 5px 15px 5px 15px;
+    border: none;
+    color: #ffffff;
+    background-color: #A9CBE8;
+}
+
+.contact-form input[type=submit]:hover, 
+.contact-form input[type=button]:hover {
+    background-color: #7BA7CC;
+    box-shadow: none;
+}
+
+.contact-form label {
+    margin: 0 0 3px 0;
+    padding: 0px;
+    display: block;
+    font-weight: bold;
+}
+
+.contact-form li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+
+#map {
+	width: 85% !important;
+	height: 280px;
+	margin: 0;
+	positon: relative;
+	padding-bottom: 3em;
+}
+
+address {
+	text-align:center;
+	padding: 3em;
+}
+
+address > span {
+	text-align:left; 
+	display:inline-block;
+	padding: 0;
+	margin: 0;
+	line-height: 1em;
+}
+
+// contact.html styles - end

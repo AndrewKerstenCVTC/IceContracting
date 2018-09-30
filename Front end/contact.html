@@ -5,26 +5,30 @@
     <title>Contact</title>
     <meta charset="utf-8">
     <link href="css/stylesheet.css" rel="stylesheet">
-    <link href="css/infoStyle.css" rel="stylesheet">
 </head>
 
 <body>
 	<header>
-	  <img id= "logo" src="images/ECFigureSkateLogo.jpeg"> <span id= "Title">Eau Claire Figure Skating Club</span> 
+	    <img id= "logo" src="images/ECFigureSkateLogo.jpeg"> <span id= "Title">Eau Claire Figure Skating Club</span> 
+	   
+	 
+	  
 	  <div class= "ul">
-		  <ul id="nav">
-		    <li><a class="active" href="IceSkating.html">Home</a></li>
-		    <li><a href="skaterInfo.html">Schedule</a></li>
-		    <li><a href="contact.html">Contact</a></li>
-		    <li><a href="about.html">About</a></li>
-		  </ul>
+	  <ul id="nav">
+	    <li><a class="active" href="IceSkating.html">Home</a></li>
+	    <li><a href="skaterInfo.html">Schedule</a></li>
+	    <li><a href="contact.html">Contact</a></li>
+	    <li><a href="about.html">About</a></li>
+	  </ul>
 	  </div>
+	  
+	  <!--<img src="images/ice_background2.jpg">-->
 	</header>
     <div class="contact-container">
             <div class="row">
 				<div class="contact-column">
 					<h1>Contact Us:</h1>
-                    <form action="/contact" method="post" id="contactForm">
+                    <form action="mailto:contactPerson@eauclairefigureskatingclub.com" enctype="text/plain" method="post" id="contactForm">
                         <ul class="contact-form">
                             <li>
                                 <label>Full Name <span class="req">*</span></label>
@@ -62,13 +66,15 @@
 	               		<span>
 		               		<h3>Eau Claire Figure Skating Club @ <br>
 		               		<a href="http://www.ci.eau-claire.wi.us/departments/recreation-services/recreation/hobbs-ice-center">Hobbs Municipal Ice Center</a></h3>
-		               		<p>915 Menomonie St.<br>
+		               		<h3>915 Menomonie St.<br>
 							   Eau Claire, WI 54703 <br>
-							715-874-4877</p>
+							715-874-4877</h3>
 						</span>
 					</address>
-               		<div id="map"></div>
                </div>
+            </div>
+            <div class="row">
+            	<div id="map"></div>
             </div>
         </div>
     </div>
