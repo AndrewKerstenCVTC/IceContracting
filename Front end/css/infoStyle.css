@@ -40,7 +40,7 @@ body {
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  
+  height: 100%;
   background-color: #d5e8f8
 }
 
@@ -128,14 +128,16 @@ body {
 
 .contact-container {
 	width: 80%;
-	height: 100%;
-	margin: 0 auto;
+	height: 80%;
+	margin: 0;
+	background-color: #d5e8f8;
+	padding: 5em;
 }
 
 .contact-info-container {
-	width: 30%;
+	width: 40%;
 	margin: 0 auto;
-	padding-bottom: 5em;
+	padding: 5em;
 }
 
 .contact-info h1 {
@@ -148,23 +150,23 @@ body {
 	margin: 0 auto;
 }
 
-.contact-header {
-	text-align: center;
-	width: 100%;
-	margin: 0 auto;
+.contact-column h3 {
+	text-align: center;	
+	padding-bottom: 1em;
 }
 
 .contact-column {
     float: left;
-    width:40%;
-    padding: 20px;
+    width: 48%;
+    height: 100%;
+    background-color: #f8feff;
+    padding: 3em;
 }
 
 .row {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
-	padding-bottom: 10em;
 }
 
 .row:after {
@@ -173,14 +175,11 @@ body {
     clear: both;
 }
 
-.contact-body {
-	background-color: #448490;
-}
-
 .contact-form {
-    margin: 10px auto;
+    margin: 0 auto;
     max-width: 500px;
     padding: 15px 15px 10px 15px;
+    background-color: #f8feff;
 }
 
 .contact-form .req {
@@ -195,21 +194,21 @@ body {
     width: 98%;
 }
 
-.form-style-1 textarea {
-    height: 200px;
+.contact-form textarea {
+    height: 5em;
 }
 
 .contact-form input[type=submit], 
 .contact-form input[type=button] {
-    background: #448490;
     padding: 5px 15px 5px 15px;
     border: none;
     color: #ffffff;
+    background-color: #A9CBE8;
 }
 
 .contact-form input[type=submit]:hover, 
 .contact-form input[type=button]:hover {
-    background: #316068;
+    background-color: #7BA7CC;
     box-shadow: none;
 }
 
@@ -228,9 +227,24 @@ body {
 }
 
 #map {
-	width: 350px;
-	height: 350px;
-	position: relative;
+	width: 85% !important;
+	height: 280px;
+	margin: 0 auto;
+	positon: relative;
+	padding-bottom: 3em;
+}
+
+address {
+	text-align:center;
+	padding: 3em;
+}
+
+address > span {
+	text-align:left; 
+	display:inline-block;
+	padding: 0;
+	margin: 0;
+	line-height: 1em;
 }
 
 

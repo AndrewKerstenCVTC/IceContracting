@@ -174,12 +174,6 @@ td, th{
   margin-top: 0;
   font-size: 1.5em;
 }
-.contact-column{
-  background-color: red;
-}
-.contact-container{
-  background-color: #c1e3ff
-}
 #contactForm{
   margin-bottom: 3em;
 }
