@@ -7,69 +7,99 @@
 	   <link href="css/stylesheet.css" rel="stylesheet">
 	
     </head>
-    <script src="js/skater.js"> </script> 
-     <img id= "logo" src="images/ECFigureSkateLogo.jpeg"> <span id= "Title">Eau Claire Figure Skating Club</span>
-      <div class= "ul">
-        <ul id="nav">
-          <li><a class="active" href="IceSkating.html">Home</a></li>
-          <li><a href="skaterInfo.html">Schedule</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="about.html">About</a></li>
+      <body> 
+        <script src="js/skater.js"> </script> 
+        <header>
+         <img id= "logo" src="images/ECFigureSkateLogo.jpeg"> <span id= "Title">Eau Claire Figure Skating Club</span>
+          <div class= "ul">
+            <ul id="nav">
+              <li><a class="active" href="IceSkating.html">Home</a></li>
+              <li><a href="skaterInfo.html">Schedule</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+        </header>
+          <div class="container">  
+           <fieldset>
+            <form id="skatercontact" action="schedule.html" method="get">
+              <h3>Skater Information</h3>
+              <h4>Fill in the following fields</h4>
+              <ul id="skaterform">
+                <li>
+                  <label for="fName">First Name:</label>
+                  <input type="text" id ="fName" name="fName" placeholder="First Name" required>
+                </li>
+
+                <li>
+                  <label for="lName">Last Name:</label>
+                  <input type="text" id="lName" name="lName" placeholder="Last Name" required>
+                </li>
+
+
+                <li>
+                  <label for="phone">Phone Number:</label>
+                  <input type="number" id="phone" name="phone" placeholder="715-123-4567" required>
+                </li>
+
+                <li>
+                  <label for="email">Your Email:</label>
+                  <input type="email" id="email" name="email" placeholder="youremail@gmail.com" required>
+                </li>
+
+
+                <li>
+                  <label for="usfsaId">USFSA#:</label>
+                  <input type="number" id="usfsaId" name="usfsaId" placeholder="123456" required>
+                </li>
+
+
+                <li>
+                  <label for="coach">Coach:</label>
+                  <input type="text" id="coach" name="coach" placeholder="Adam Rippon">
+                </li>
+
+                <li>
+                  <span>Membership Type:</span>
+
+                    <label for="clubMember" id="1">ECFSC Member</label>
+                    <input type="radio" id ="clubMember" name="membership" required>
+
+                    <label for="nonMember" id="2">Non-Member</label>
+                    <input type="radio" id ="nonMember" name="membership" required>
+                </li>
+                </ul>
+              <button type="submit" value="submit"> Next </button>
+
+              </form>
+            </fieldset>
+          </div>
+      </body>
+      <div class="footer">
+	
+        <ul class="footerinfo1">
+            <h4>Info</h4>
+            <a href="index.html">About Us</a><br>
+            <a href="contactus.html">Contact Us</a><br>
+            <a href="#">Terms + Conditions</a><br>
+            </ul>
+
+
+        <ul class="footerinfo3">
+            <h4>Social</h4>
+            <a href="https://www.blogger.com/" target="_blank">Blog</a><br>
+            <a href="https://www.facebook.com/" target="_blank">Facebook</a><br>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a><br>
+            </ul>
+
+        <ul class="footerinfo4">
+           <h4>No More FOMO<br>
+           Sign up with your email address to receive the latest news!</h4>
+           <form method="post" action="mailto:khaase2@student.cvtc.edu">
+           <input type="text" name="email" value="Email">
+           <input type="submit" value="Submit">
+           </form>
         </ul>
       </div>
-
-      <div class="container">  
-       <fieldset>
-        <form id="skatercontact" action="schedule.html" method="post">
-          <h3>Skater Information</h3>
-          <h4>Fill in the following fields</h4>
-          <ul id="skaterform">
-            <li>
-              <label for="fName">First Name:</label>
-              <input type="text" id ="fName" placeholder="First Name" required>
-            </li>
-
-            <li>
-              <label for="lName">Last Name:</label>
-              <input type="text" id="lName"  placeholder="Last Name" required>
-            </li>
-
-
-            <li>
-              <label for="phone">Phone Number:</label>
-              <input type="number" id="phone" placeholder="715-123-4567" required>
-            </li>
-
-            <li>
-              <label for="email">Your Email:</label>
-              <input type="email" id="email" placeholder="youremail@gmail.com" required>
-            </li>
-
-
-            <li>
-              <label for="usfsaId">USFSA#:</label>
-              <input type="number" id="usfsaId" placeholder="123456" required>
-            </li>
-
-
-            <li>
-              <label for="coach">Coach:</label>
-              <input type="text" id="coach" placeholder="Adam Rippon">
-            </li>
-
-            <li>
-              <span>Membership Type:</span>
-
-                <label for="clubMember" id="1">ECFSC Member</label>
-                <input type="radio" id ="clubMember" name="membership" required>
-
-                <label for="nonMember" id="2">Non-Member</label>
-                <input type="radio" id ="nonMember" name="membership" required>
-            </li>
-            </ul>
-          <button type="submit" value="submit"> Next </button>
-
-          </form>
-        </fieldset>
-      </div>
+      
 </html>

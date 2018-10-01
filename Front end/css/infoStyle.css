@@ -23,11 +23,17 @@
 }
 
 fieldset {
-  border: medium none !important;
+  border: medium none;
   margin: 0 0 10px;
   min-width: 100%;
   padding: 0;
   width: 100%;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 30px;
+  color: #777;
+  height: 100%;
 }
 
 #skaterform {
@@ -35,12 +41,6 @@ fieldset {
 }
 
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 12px;
-  line-height: 30px;
-  color: #777;
-  height: 100%;
   background-color: #d5e8f8
 }
 
