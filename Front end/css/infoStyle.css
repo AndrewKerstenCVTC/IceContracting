@@ -23,11 +23,17 @@
 }
 
 fieldset {
-  border: medium none !important;
+  border: medium none;
   margin: 0 0 10px;
   min-width: 100%;
   padding: 0;
   width: 100%;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 30px;
+  color: #777;
+  height: 100%;
 }
 
 #skaterform {
@@ -35,12 +41,6 @@ fieldset {
 }
 
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 12px;
-  line-height: 30px;
-  color: #777;
-  
   background-color: #d5e8f8
 }
 
@@ -123,114 +123,6 @@ body {
 #skatercontact textarea:focus {
   outline: 0;
   border: 1px solid #aaa;
-}
-
-
-.contact-container {
-	width: 80%;
-	height: 100%;
-	margin: 0 auto;
-}
-
-.contact-info-container {
-	width: 30%;
-	margin: 0 auto;
-	padding-bottom: 5em;
-}
-
-.contact-info h1 {
-	text-align: center;
-}
-
-.contact-info h2, h3{
-	width: 100%;
-	text-align: left;
-	margin: 0 auto;
-}
-
-.contact-header {
-	text-align: center;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.contact-column {
-    float: left;
-    width:40%;
-    padding: 20px;
-}
-
-.row {
-	height: 100%;
-	width: 100%;
-	margin: 0 auto;
-	padding-bottom: 10em;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.contact-body {
-	background-color: #448490;
-}
-
-.contact-form {
-    margin: 10px auto;
-    max-width: 500px;
-    padding: 15px 15px 10px 15px;
-}
-
-.contact-form .req {
-    color:red;
-}
-
-.contact-form .split-input {
-    width: 48%;
-}
-
-.contact-form .long-input {
-    width: 98%;
-}
-
-.form-style-1 textarea {
-    height: 200px;
-}
-
-.contact-form input[type=submit], 
-.contact-form input[type=button] {
-    background: #448490;
-    padding: 5px 15px 5px 15px;
-    border: none;
-    color: #ffffff;
-}
-
-.contact-form input[type=submit]:hover, 
-.contact-form input[type=button]:hover {
-    background: #316068;
-    box-shadow: none;
-}
-
-.contact-form label {
-    margin: 0 0 3px 0;
-    padding: 0px;
-    display: block;
-    font-weight: bold;
-}
-
-.contact-form li {
-    padding: 0;
-    display: block;
-    list-style: none;
-    margin: 10px 0 0 0;
-}
-
-#map {
-	width: 350px;
-	height: 350px;
-	position: relative;
 }
 
 
