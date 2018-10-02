@@ -1,8 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 html{
   background-color: green;
   background-image: url("ice_background2.jpg");
   background: no-repeat;
-  opacity: 0.8;
   font-family: sans-serif
 }
 
@@ -17,15 +28,15 @@ body {
   opacity: 0.7;
   text-align: right;
   position: relative;
-  
+  margin-left: 1em
 }
 
 header {
-  /*background-image: url("../images/ice-background-1.jpg");
-  background-repeat: no-repeat;*/
-  
+  background-image: url("../images/ice-background-1.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  padding-bottom: 1em;  
 }
-
 
 #logo {
   position: relative;
@@ -34,8 +45,6 @@ header {
   margin-left: 50px;
   margin-top: 30px;
 }
-
-
 
 ul {
     list-style-type: none;
