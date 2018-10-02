@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -69,9 +70,10 @@ public class SessionsServlet extends HttpServlet
 			{
 				long sessionID = result.getLong("SessionID");
 				long dateTime = result.getLong("DateTime");
+				String type = result.getString("Type");
 				int attending = result.getInt("Attending");
 				
-				sessions.add(new Session(sessionID, dateTime, 'f', attending));
+				sessions.add(new Session(sessionID, dateTime, type, attending));
 			}
 			
 			response.getWriter().append(gson.toJson(sessions));
@@ -79,6 +81,33 @@ public class SessionsServlet extends HttpServlet
 		catch (SQLException ex)
 		{
 			response.sendError(500);
+		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		
+		String string = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+		Session session = gson.fromJson(string, Session.class);
+		
+		String queryString = "INSERT INTO Session (SessionID, DateTime, Type) VALUES (NULL, ?, ?);";
+		
+		try
+		(
+			Connection connection = dataSource.getConnection();
+			PreparedStatement query = connection.prepareStatement(queryString);
+		)
+		{
+			query.setLong(1, session.getDate());
+			query.setString(2, session.getType());
+			
+			query.executeUpdate();
+		}
+		catch (SQLException ex)
+		{
+			response.sendError(500);
+			
 		}
 	}
 	

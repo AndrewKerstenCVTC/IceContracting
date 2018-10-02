@@ -1,0 +1,146 @@
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #fffde7;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+table, th {
+    border: 3px solid #000000;
+}
+
+table {
+    min-width: 1280px;
+    max-width: 1680px;
+    margin-top: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+
+thead > tr:first-child > th {
+    font-size: 4em;
+    padding: 1rem;
+}
+
+thead > tr:last-child > th {
+    padding: 0.75em;
+}
+
+td {
+    width: 160px;
+    height: 100px;
+    padding: 0.5em;
+    vertical-align: top;
+    border: 1px solid #000000;
+    text-align: right;
+}
+
+td.inactive {
+    background-color: #DDDDDD;
+}
+
+ul {
+    margin: 0.5em 0 1em 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    padding: 0.2em;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 0.25em;
+}
+
+li.new { background-color: #DDDDDD; }
+li.new:hover { background-color: #EEEEEE; }
+
+li.f { background-color: #c8e6c9; }
+li.f:hover {  background-color: #e8f5e9; }
+
+li.c { background-color: #b3e5fc; }
+li.c:hover {  background-color: #e1f5fe; }
+
+li.m { background-color: #d1c4e9; }
+li.m:hover {  background-color: #ede7f6; }
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.6);
+}
+
+#flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#newSession {
+    width: 640px;
+    height: auto;
+    background-color: #FFFFFF;
+    border: 3px solid black;
+    padding-bottom: 2em;
+}
+
+#newSession > h1 {
+    text-align: center;
+    border-bottom: 3px solid black;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-bottom: 0.25em;
+}
+
+fieldset {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+#buttons {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: 0.5rem;
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+#btnCreate {
+    background-color: #66bb6a;
+    border: 3px solid #338a3e;
+}
+
+#btnDelete {
+    background-color: #ef5350;
+    border: 3px solid #b61827;
+}
+
+#btnCreate:hover { background-color: #98ee99; }
+#btnDelete:hover { background-color: #ff867c; }

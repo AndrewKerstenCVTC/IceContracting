@@ -4,10 +4,17 @@ public class Session
 {
 	private long id;
 	private long date;
-	private char type;
+	private String type;
 	private int attending;
 	
-	public Session(long id, long date, char type, int attending)
+	public Session() {
+		setId(0);
+		setDate(0);
+		setType("f");
+		setAttending(0);
+	}
+	
+	public Session(long id, long date, String type, int attending)
 	{
 		setId(id);
 		setDate(date);
@@ -35,12 +42,12 @@ public class Session
 		this.date = date;
 	}
 
-	public char getType()
+	public String getType()
 	{
 		return type;
 	}
 
-	public void setType(char type)
+	public void setType(String type)
 	{
 		this.type = type;
 	}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div id="modal">
+        <div id="flex">
+            <div id="newSession">
+                <h1>New Session</h1>
+                <fieldset>
+                    <p><label>Date: </label><span id="newSessionDate"></span></p>
+                    <p>
+                        <label>Time: </label>
+                        <select name="hour">
+                            <option value="12" selected>12</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                        <span> : </span>
+                        <select name="minute">
+                            <option value="00">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <select name="ampm">
+                            <option value="am">AM</option>
+                            <option value="pm" selected>PM</option>
+                        </select>
+                    <p>
+                        <label>Type: </label>
+                        <select name="type">
+                            <option value="f" selected>Freestyle</option>
+                            <option value="c">Combo</option>
+                            <option value="m">Moves</option>
+                        </select>
+                    </p>
+                </fieldset>
+                <div id="buttons">
+                    <span id="btnCreate" class="btn" onclick="createSession()">Create</span>
+                    <span id="btnDelete" class="btn" onclick="deleteSession()">Delete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="calendar"></div>
+    <script src="js/admin.js"></script>
+	<script>
+        var selectedSessions = [];
+        let calendarYear = 2018;
+        let calendarMonth = 9;
+        let calendarDate = 1;
+        let modal = document.getElementById("modal");
+        let flex = document.getElementById("flex");
+
+        let inputType = document.querySelector('select[name="type"]');
+        let inputHour = document.querySelector('select[name="hour"]');
+        let inputMinute = document.querySelector('select[name="minute"]');
+        let inputAMPM = document.querySelector('select[name="ampm"]');
+
+        createCalendar(document.getElementById("calendar"), calendarYear, calendarMonth, function(cell, date) {
+            cell.appendChild(document.createTextNode(date.getDate()));
+            if (cell.getAttribute("class") != "inactive") {
+                let ul = document.createElement("ul");
+                ul.setAttribute("id", `${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+                let li = document.createElement("li");
+                li.setAttribute("class", "new")
+                li.setAttribute("data-date", date.getDate());
+                li.onclick = newSessionClick;
+                li.appendChild(document.createTextNode("Add New..."));
+                ul.appendChild(li);
+                cell.appendChild(ul);
+            }
+        });
+
+        fetch("http://199.223.235.232:8080/IceServer/Sessions").then(function(response) {
+            return response.json();
+        }).then(function(sessions) {
+            for (let session of sessions) {
+                let date = new Date(session.date);
+                let ul = document.getElementById(`${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+                let li = document.createElement("li");
+                li.setAttribute("data-session", session.id);
+                li.setAttribute("class", session.type);
+                li.onclick = function(event) {
+                    let session = event.target.dataset.session;
+                    let index = selectedSessions.indexOf(session);
+                    if (index == -1) {
+                        selectedSessions.push(session);
+                    } else {
+                        selectedSessions.splice(index, 1);
+                    }
+                };
+                let text = document.createTextNode(`${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} ${session.attending}/25`);
+                li.appendChild(text);
+                ul.appendChild(li);
+            }
+        });
+        
+        function newSessionClick(event) {
+
+            calendarDate = event.target.dataset.date;
+            
+            let dateElement = document.getElementById("newSessionDate");
+            let date = new Date(calendarYear, calendarMonth, calendarDate);
+            dateElement.textContent = date.toLocaleDateString("en-us", { year: "numeric", month: "long", day: "numeric" });
+
+            document.querySelector('select[name="hour"]').value = "12";
+            document.querySelector('select[name="minute"]').value = "00";
+            document.querySelector('select[name="ampm"]').value = "pm";
+            document.querySelector('select[name="type"]').value = "f";
+
+            modal.style.display = "block";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == flex) {
+                modal.style.display = "none";
+            }
+        }
+
+        function createSession() {
+            let hour = inputHour.value % 12;
+            if (inputAMPM.value == "pm") {
+                hour += 12;
+            }
+            let date = new Date(calendarYear, calendarMonth, calendarDate, hour, inputMinute.value);
+            let ul = document.getElementById(`${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+            let li = document.createElement("li");
+            li.setAttribute("data-session", 0);
+            li.setAttribute("class", inputType.value);
+            li.appendChild(document.createTextNode(`${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} 0/25`));
+            ul.appendChild(li);
+            modal.style.display = "none";
+
+            fetch("http://199.223.235.232:8080/IceServer/Sessions", {
+                method: 'POST',
+                body: JSON.stringify({
+                    "date": date.getTime(),
+                    "type": inputType.value
+                }),
+                headers: {
+                    'Content-Type': 'text/plain'
+                }
+            }).then(function(response) {
+                return response.json();
+            }).then(function(json) {
+                console.log(json);
+            });
+        }
+
+        function deleteSession() {
+        }
+	</script>
+</body>
+</html>
