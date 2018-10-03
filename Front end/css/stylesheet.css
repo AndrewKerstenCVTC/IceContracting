@@ -30,7 +30,6 @@ body {
   position: relative;
   margin-left: 1em;
   padding-top: 1em;
-  text-decoration: underline
 }
 
 header {
@@ -69,7 +68,14 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
+a{
+  color: cadetblue;
+  text-decoration: none;
+}
+a:hover{
+  color: #1b4b4d;
+  text-decoration: underline
+}
 li a:hover {
     background-color: #89c5f8;
 }
@@ -85,13 +91,13 @@ li a:hover {
   background-color: #f8feff;
   width: 50em;
   margin-top: 1em;
-  margin-left: 4em;
+  margin-left: auto;
+  margin-right: auto
 }
 .Sponsors {
   font-size: 3em;
   color: cadetblue;
   font-family: cursive;
-  text-decoration: underline;
   margin-bottom: 10px
 }
 
@@ -233,7 +239,7 @@ td, th{
   background-repeat: no-repeat;
   background-position: top center;
   height: 542px;
-  padding-top: 1em;
+  padding-top: 2em;
   box-shadow: 8px 8px 14px #23537b;
 }
 .hSponsor{
@@ -278,10 +284,9 @@ table li {
 }
 
 .contact-column h3 {
-	text-align: center;	
+	text-align: left;	
 	padding-bottom: 1em;
 }
-
 .contact-column {
     float: left;
     width: 40%;
@@ -422,6 +427,7 @@ table.boardOfDirectors, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     margin: auto;
+  text-align: left
 }
 th, td {
     padding: 5px;
