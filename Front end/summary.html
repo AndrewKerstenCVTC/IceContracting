@@ -18,6 +18,58 @@
 	  </div>
 	</header>
 	<div id="summary-container">
+		<div class=".row">
+			<div class="summary-column">
+				<h3>Confirm your Reservation Details:</h3>
+				<form action="/submit" name="schedule-session" id="session-form" method="post" >
+		             <ul class="contact-form">
+		                <li>
+		                  <label class="block" for="fName">Full Name:</label>
+		                  <input type="text" id ="fName" name="fName" class="split-input" required>
+		                  <input type="text" id="lName" name="lName"  class="split-input" required>
+		                </li>
+		                <li>
+		                  <label for="phone">Phone Number:</label>
+		                  <input type="text" id="phone" name="phone" class="long-input" required>
+		                </li>
+		                <li>
+		                  <label for="email">Your Email:</label>
+		                  <input type="email" id="email" name="email" class="long-input" required>
+		                </li>
+		                <li>
+		                  <label for="usfsaId" class="split-label">USFSA#:</label>
+		                  <label for="coach" class="split-label">Coach:</label>
+		                  <input type="number" id="usfsaId" name="usfsaId" class="split-input" required>
+		                  <input type="text" id="coach" name="coach" class="split-input">
+		                </li>
+		                <li>
+		                    <label>ECFSC Member: </label>
+		                    <span id="right-float">
+			                    <label for="clubMember" class="inline-label">Yes</label>
+			                    <input type="radio" id="clubMember" name="membership" required>
+			                    <label for="nonMember" class="inline-label" >No</label>
+			                    <input type="radio" id="nonMember" name="membership" required>
+			                </span>
+		                </li>
+		                <li>
+		                	<input type="submit" value="Schedule Session(s)" />
+		            	</li>
+		            </ul>
+				</form>
+			</div>
+			<div class="summary-column">
+				<h3>Selected Session Times</h3>
+				<ul>
+					<li>11/01 5:00PM</li>
+					<li>11/03 5:00PM</li>
+					<li>11/10 5:00PM</li>
+					<li>11/15 5:00PM</li>
+					<li>11/20 5:00PM</li>
+					<li>11/25 5:00PM</li>
+					<li>11/26 5:00PM</li>
+				</ul>
+			</div>
+		</div>
 	</div>
     <div class="footer">
 	

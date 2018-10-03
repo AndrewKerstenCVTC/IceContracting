@@ -1,12 +1,19 @@
 window.onload = function () {
-	var memberKeys = ['fName', 'lName', 'phone', 'email', 'usafid', 'coach', 'clubMember', 'nonMember'];
+	var memberKeys = ['fName', 'lName', 'phone', 'email', 'usfsaId', 'coach', 'clubMember', 'nonMember'];
 	var sessionKeys = [];
 	var params = window.location.search.substr(1).split('&');
 	var validParams = getValidParameters(params, memberKeys);
-	var summary = document.getElementById('summary-container');
+	var summary = document.getElementById('member-in');
 
 	for (var param in validParams) {
-		summary.appendChild(createNode('li', param + ': ' + validParams[param]));
+		var elem = document.getElementById(param);
+		if (elem) {
+			if (param == 'clubMember' || param == 'nonMember') {
+				elem.checked = validParams[param];
+			} else {
+				elem.value = validParams[param];
+			}
+		}
 	}
 }
 
@@ -33,4 +40,4 @@ function createNode(node, text) {
 	return node;
 }
 
-// file:///D:/Development/Java/workspace/IceContracting/agile_fa_2018_IceContracting/Front end/summary.html?fName=jordan&lName=wisniewski&phone=7159554894&email=jordan@email.com&usafid=234234&coach=coachA&clubMember=true&nonMember=false
+// IceContracting/agile_fa_2018_IceContracting/Front%20end/summary.html?fName=jordan&lName=wisniewski&phone=7159554894&email=jordan@email.com&usfsaId=234234&coach=coachA&clubMember=true&nonMember=false

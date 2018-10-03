@@ -268,22 +268,13 @@ table li {
   cursor: pointer;
 }
 
-// contact.html styles - start
+/* contact.html styles */
 .contact-container {
 	width: 80%;
 	height: 80%;
 	margin: 0 auto;
 	background-color: #d5e8f8;
-}
-
-.contact-info h1 {
-	text-align: center;
-}
-
-.contact-info h2, h3{
-	width: 100%;
-	text-align: left;
-	margin: 0 auto;
+	padding-top: 2em;
 }
 
 .contact-column h3 {
@@ -324,6 +315,18 @@ table li {
     width: 48%;
 }
 
+.split-label {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.split-label:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .contact-form .long-input {
     width: 98%;
 }
@@ -334,27 +337,44 @@ table li {
 
 .contact-form input[type=submit], 
 .contact-form input[type=button] {
-    padding: 5px 15px 5px 15px;
+    padding: 1px 15px 5px 15px;
     border: none;
     color: #ffffff;
-    background-color: #A9CBE8;
+    background-color: #7BA7CC;
 }
 
 .contact-form input[type=submit]:hover, 
 .contact-form input[type=button]:hover {
-    background-color: #7BA7CC;
+    background-color: #A9CBE8;
     box-shadow: none;
 }
 
+.contact-form input[type=radio] {
+	padding: 5px;
+	margin: 5px;
+	display: inline;
+}
+
+#right-float {
+	float: right;
+}
+
 .contact-form label {
-    margin: 0 0 3px 0;
+	margin: 0 0 3px 0;
     padding: 0px;
-    display: block;
     font-weight: bold;
 }
 
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline-block;
+}
+
 .contact-form li {
-    padding: 0;
+    padding: 5px;
     display: block;
     list-style: none;
     margin: 10px 0 0 0;
@@ -381,9 +401,22 @@ address > span {
 	line-height: 1em;
 }
 
-// contact.html styles - end
+/* summary.html styles */
 
-// about.html styles - start
+#summary-container {
+	margin: 75px;
+    padding: 15px 15px 10px 15px;
+    border: 1px solid #d5e8f8;
+}
+
+.summary-column {
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+
+
+/* about.html styles - start */
 
 table.boardOfDirectors, th, td {
     border: 1px solid black;
@@ -399,4 +432,4 @@ tr.boardOfDirectorsTR {
 	background-color: black;
 }
 
-// about.html styles - end
+/* about.html styles - end */
