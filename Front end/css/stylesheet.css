@@ -363,3 +363,21 @@ address > span {
 }
 
 // contact.html styles - end
+
+// about.html styles - start
+
+table.boardOfDirectors, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+th, td {
+    padding: 5px;
+}
+
+tr.boardOfDirectorsTR {
+	color: teal;
+	background-color: black;
+}
+
+// about.html styles - end
