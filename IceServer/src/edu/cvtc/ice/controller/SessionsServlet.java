@@ -91,7 +91,7 @@ public class SessionsServlet extends HttpServlet
 		String string = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 		Session session = gson.fromJson(string, Session.class);
 		
-		String queryString = "INSERT INTO Session (SessionID, DateTime, Type) VALUES (NULL, ?, ?);";
+		String queryString = "INSERT INTO Session (DateTime, Type) VALUES (?, ?);";
 		
 		try
 		(
@@ -107,7 +107,6 @@ public class SessionsServlet extends HttpServlet
 		catch (SQLException ex)
 		{
 			response.sendError(500);
-			
 		}
 	}
 	
