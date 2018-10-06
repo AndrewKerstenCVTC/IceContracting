@@ -19,12 +19,7 @@
       </ul>
     </div>
   </header>
-  <div id="scheduleMain">
-    <script>
-      buildCalendar(2018, 9);
-      buildCalendar(2018, 10);
-    </script>
-  </div>
+  <div id="scheduleMain"></div>
   <div class="footer">
 	
 	<ul class="footerinfo1">
@@ -51,17 +46,40 @@
     
   </div>
   <script>
+    // Add the calendar for the current year and month as a child of 'scheduleMain' div.
+    createCalendar(document.getElementById("scheduleMain"), new Date(Date.now()).getFullYear(), new Date(Date.now()).getMonth(), function(cell, date) {
+      cell.appendChild(document.createTextNode(date.getDate()));
+      if (cell.getAttribute("class") != "inactive") {
+        let ul = document.createElement("ul");
+        ul.setAttribute("id", `${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+        cell.appendChild(ul);
+      }
+    });
+
+    // Populate the calendar with session times fetched from the server.
     fetch("http://199.223.235.232:8080/IceServer/Sessions")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(sessions) {
-        for (let sessionIndex in sessions) {
-          let date = new Date(sessions[sessionIndex].date);
-          let element = document.getElementById(date.toLocaleString("en-us", { month: "short" }) + date.getDate());
-          element.innerHTML += "<li>" + date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true }) + " " + sessions[sessionIndex].attending + "/25</li>";
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(sessions) {
+      for (let session of sessions) {
+        let date = new Date(session.date);
+        let ul = document.getElementById(`${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+        if (ul) {
+          let li = document.createElement("li");
+          li.setAttribute("data-type", session.type);
+          li.textContent = `${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} `;
+          if (session.attending >= 25) {
+            let span = document.createElement("span");
+            span.textContent = `<span class="sessionFull">${session.attending}/25</span>`;
+            li.appendChild(span);
+          } else {
+            li.textContent += `${session.attending}/25`;
+          }
+          ul.appendChild(li);
         }
-      });
+      }
+    });
   </script>
 </body>
 </html>
