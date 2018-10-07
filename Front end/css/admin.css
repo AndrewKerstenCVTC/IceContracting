@@ -26,6 +26,7 @@ table {
 thead > tr:first-child > th {
     font-size: 4em;
     padding: 1rem;
+    position: relative;
 }
 
 thead > tr:last-child > th {
@@ -144,3 +145,27 @@ label {
 
 #btnCreate:hover { background-color: #98ee99; }
 #btnDelete:hover { background-color: #ff867c; }
+
+#btnPrev, #btnNext {
+    position: absolute;
+    padding: 0.2em;
+    font-size: 1.5rem;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #DDDDDD;
+    cursor: pointer;
+}
+
+#btnPrev {
+    left: 0;
+    margin-left: 1rem;
+}
+
+#btnNext {
+    right: 0;
+    margin-right: 1rem;
+}
+
+#btnPrev:hover, #btnNext:hover {
+    background-color: #EEEEEE;
+}
