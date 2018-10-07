@@ -17,10 +17,23 @@ function createCalendar(parentElement, year, month, onDateCreated) {
 
     // Generate the month thead row
 
+    let prevMonth = new Date(year, month - 1, 1);
+    let nextMonth = new Date(year, month + 1, 1);
+
     let monthRow = document.createElement("tr");
     let monthCell = document.createElement("th");
     monthCell.setAttribute("colspan", "7");
     monthCell.appendChild(document.createTextNode(`${dateFirst.toLocaleString("en-us", { month: "long" })} ${year}`));
+    let prev = document.createElement("span");
+    prev.setAttribute("id", "btnPrev");
+    //prev.textContent = "Prev";
+    prev.textContent = prevMonth.toLocaleString("en-us", { month: "short" });
+    let next = document.createElement("span");
+    next.setAttribute("id", "btnNext");
+    //next.textContent = "Next";
+    next.textContent = nextMonth.toLocaleString("en-us", { month: "short" });
+    monthCell.appendChild(prev);
+    monthCell.appendChild(next);
     monthRow.appendChild(monthCell);
 
     thead.appendChild(monthRow);

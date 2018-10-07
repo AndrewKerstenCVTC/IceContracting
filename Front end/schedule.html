@@ -46,8 +46,10 @@
     
   </div>
   <script>
+    let now = new Date(Date.now());
+
     // Add the calendar for the current year and month as a child of 'scheduleMain' div.
-    createCalendar(document.getElementById("scheduleMain"), new Date(Date.now()).getFullYear(), new Date(Date.now()).getMonth(), function(cell, date) {
+    createCalendar(document.getElementById("scheduleMain"), now.getFullYear(), now.getMonth(), function(cell, date) {
       cell.appendChild(document.createTextNode(date.getDate()));
       if (cell.getAttribute("class") != "inactive") {
         let ul = document.createElement("ul");
@@ -56,8 +58,14 @@
       }
     });
 
+    let url = new URL("http://199.223.235.232:8080/IceServer/Sessions");
+    url.search = new URLSearchParams({
+        "start": new Date(now.getFullYear(), now.getMonth(), 1).getTime(),
+        "end": new Date(now.getFullYear(), now.getMonth() + 1, 1).getTime()
+    });
+
     // Populate the calendar with session times fetched from the server.
-    fetch("http://199.223.235.232:8080/IceServer/Sessions")
+    fetch(url.toString())
     .then(function(response) {
       return response.json();
     })

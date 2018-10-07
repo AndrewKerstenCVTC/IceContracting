@@ -51,36 +51,67 @@ public class SessionsServlet extends HttpServlet
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		String startDateString = request.getParameter("start");
+		String endDateString = request.getParameter("end");
+		
+		long startDateLong = 0;
+		long endDateLong = 0;
+		
+		try
+		{
+			startDateLong = Long.parseLong(startDateString);
+			endDateLong = Long.parseLong(endDateString);
+		}
+		catch (Exception ex)
+		{
+			response.sendError(500);
+			return;
+		}
+		
 		// Header needed for cross origin requests
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		
-		String queryString = "SELECT Session.SessionID, Session.DateTime, Session.Type, COUNT(Attendance.SessionID) AS Attending FROM Session LEFT JOIN Attendance on Attendance.SessionID = Session.SessionID GROUP BY Session.SessionID;";
+		String queryString = "SELECT Session.SessionID, Session.DateTime, Session.Type, COUNT(Attendance.SessionID) AS Attending FROM Session LEFT JOIN Attendance ON Attendance.SessionID = Session.SessionID WHERE Session.DateTime >= ? AND Session.DateTime < ? GROUP BY Session.SessionID;";
 		
 		// Establish a connection to the database
 		try
 		(
 			Connection connection = dataSource.getConnection();
 			PreparedStatement query = connection.prepareStatement(queryString);
-			ResultSet result = query.executeQuery();
 		)
 		{
-			ArrayList<Session> sessions = new ArrayList<>();
+			query.setLong(1, startDateLong);
+			query.setLong(2, endDateLong);
 			
-			while (result.next())
+			try
+			(
+				ResultSet result = query.executeQuery();
+			)
 			{
-				long sessionID = result.getLong("SessionID");
-				long dateTime = result.getLong("DateTime");
-				String type = result.getString("Type");
-				int attending = result.getInt("Attending");
+				ArrayList<Session> sessions = new ArrayList<>();
 				
-				sessions.add(new Session(sessionID, dateTime, type, attending));
+				while (result.next())
+				{
+					long sessionID = result.getLong("SessionID");
+					long dateTime = result.getLong("DateTime");
+					String type = result.getString("Type");
+					int attending = result.getInt("Attending");
+					
+					sessions.add(new Session(sessionID, dateTime, type, attending));
+				}
+				
+				response.getWriter().append(gson.toJson(sessions));
 			}
-			
-			response.getWriter().append(gson.toJson(sessions));
+			catch (SQLException ex2)
+			{
+				response.getWriter().append(ex2.getMessage());
+				//response.sendError(500);
+			}
 		}
 		catch (SQLException ex)
 		{
-			response.sendError(500);
+			response.getWriter().append(ex.getMessage());
+			//response.sendError(500);
 		}
 	}
 	
