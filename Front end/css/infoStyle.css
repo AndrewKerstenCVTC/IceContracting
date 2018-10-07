@@ -45,10 +45,19 @@ body {
 }
 
 .container {
-  max-width: 400px;
-  width: 100%;
+  /*max-width: 400px; */
+  width: 930px;
   margin: 0 auto;
   position: relative;
+}
+
+#first {
+  float: left;
+}
+
+#second {
+  float: right;
+  margin: 30px 0;
 }
 
 #skatercontact input[type="text"],
@@ -96,13 +105,13 @@ body {
 
 #skatercontact button[type="submit"] {
   cursor: pointer;
-  width: 88%;
+  width: 86%;
   border: none;
   background: #92c4ed;
   color: #FFF;
   padding: 10px;
   font-size: 20px;
-  margin-left: 6%;
+  margin-left: 8%;
   
   
 }

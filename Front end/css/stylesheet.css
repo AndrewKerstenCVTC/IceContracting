@@ -105,6 +105,56 @@ li a:hover {
   font-size: 16px;
 }
 
+#sessiontypes {
+  margin: auto;
+  width: 50%;
+}
+#sessiontypeh4 {
+  float: left;
+  display: inline-block;
+  padding: 2px;
+  margin-top: 1px;
+  
+}
+#freestylebox {
+  text-align: center;
+  background-color: lightgray;
+  padding-top: 2px;
+  padding: 2px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 80px;
+  float: left;
+}
+
+#combobox {
+  text-align: center;
+  background-color: lightpink;
+  padding: 2px;
+  border: 1px solid #d46a6a;
+  border-radius: 4px;
+  width: 80px;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#movesbox {
+  text-align: center;
+  background-color: lightgreen;
+  padding: 2px;
+  border: 1px solid green;
+  border-radius: 4px;
+  width: 80px;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+
 #SkatePic {
   display: block;
   margin-top: 50px;
@@ -112,6 +162,7 @@ li a:hover {
   margin-right: auto;
   margin-bottom: 0;
   width: 80%;
+  text-align: center;
 }
 
 .footer {
@@ -178,6 +229,7 @@ li a:hover {
   text-align: left
 }
 #scheduleMain{
+  clear: both;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
