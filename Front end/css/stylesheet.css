@@ -393,7 +393,8 @@ table li {
 }
 
 .contact-form input[type=submit], 
-.contact-form input[type=button] {
+.contact-form input[type=button],
+.contact-form button {
     padding: 1px 15px 5px 15px;
     border: none;
     color: #ffffff;
@@ -401,7 +402,8 @@ table li {
 }
 
 .contact-form input[type=submit]:hover, 
-.contact-form input[type=button]:hover {
+.contact-form input[type=button]:hover,
+.contact-form button:hover {
     background-color: #A9CBE8;
     box-shadow: none;
 }

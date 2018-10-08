@@ -21,7 +21,6 @@
 		<div class=".row">
 			<div class="summary-column">
 				<h3>Confirm your Reservation Details:</h3>
-				<form action="/submit" name="schedule-session" id="session-form" method="post" >
 		             <ul class="contact-form">
 		                <li>
 		                  <label class="block" for="fName">Full Name:</label>
@@ -52,10 +51,9 @@
 			                </span>
 		                </li>
 		                <li>
-		                	<input type="submit" value="Schedule Session(s)" />
+												<button onclick="submit()">Schedule Session(s)</button>
 		            	</li>
-		            </ul>
-				</form>
+								</ul>
 			</div>
 			<div class="summary-column">
 				<h3>Selected Session Times</h3>
@@ -88,5 +86,36 @@
     
   </div>
 	 <script src="js/summary.js"></script>
+	 <script>
+		 let params = new URLSearchParams(window.location.search);
+		 function submit() {
+			fetch("http://localhost:8080/IceServer/Register", {
+        method: 'POST',
+        body: JSON.stringify({
+          "member": {
+						"usfsn": document.getElementById("usfsaId").value,
+						"fname": document.getElementById("fName").value,
+						"lname": document.getElementById("lName").value,
+						"email": document.getElementById("email").value,
+						"phone": document.getElementById("phone").value,
+						"coach": document.getElementById("coach").value,
+						"isMember": document.getElementById("clubMember").checked
+					},
+          "sessions": params.getAll("session")
+        }),
+        headers: {
+          'Content-Type': 'text/plain'
+        }
+      }).then(function(response) {
+        console.log(response.status);
+				if (response.status == 200) {
+					alert("Registration successful.");
+				} else {
+					alert("Registration failed.");
+				}
+      });
+			return false;
+		}
+	 </script>
  </body>
  </html>
