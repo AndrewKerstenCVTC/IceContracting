@@ -476,10 +476,10 @@ address > span {
 /* about.html styles - start */
 
 table.boardOfDirectors, th, td {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-collapse: collapse;
     margin: auto;
-  text-align: left
+    text-align: left
 }
 th, td {
     padding: 5px;
@@ -488,6 +488,10 @@ th, td {
 tr.boardOfDirectorsTR {
 	color: teal;
 	background-color: black;
+}
+#aboutIntro {
+	text-align: left;
+	
 }
 
 /* about.html styles - end */
