@@ -21,44 +21,32 @@
   </header>
   <div id="sessiontypes">
 	  <h4 id="sessiontypeh4">Session Types: </h4>
-	    <div id="freestylebox">
+	    <div class="key" id="freestylebox">
 	      Freestyle
 	    </div>
-	    <div id="combobox">
+	    <div class="key" id="combobox">
 	      Combo
 	    </div>
-	    <div id="movesbox">
+	    <div class="key" id="movesbox">
 	      Moves
 	    </div>
 	  
   </div>
-  <div id="scheduleMain"></div>
-  <button onclick="toSummaryPage()">Review Order</button>
-  
-  <div class="footer">
-	
-	<ul class="footerinfo1">
+  <div class="scheduleContent" id="scheduleMain"></div>
+  <div class="scheduleContent">
+        <button onclick="toSummaryPage()">Review Order</button>
+  </div>
+  <div class="footer">	
+	<ul id="footerinfo">
 		<h4>Info</h4>
 		<a href="about.html">About Us</a><br>
 		<a href="contact.html">Contact Us</a><br>
-    </ul>
-    
-    
-	<ul class="footerinfo3">
+    </ul>    
+	<ul id="footersocial">
 		<h4>Social</h4>
         <div class="social"><a class="social" id="facebook" href="https://www.facebook.com/eauclairefigureskate" target="_blank"></a></div>
         <div class="social"><a class="social" id="instagram" href="https://www.instagram.com/ec.figureskaters/" target="_blank"></a></div>
-    </ul>
-    
-    <!--<ul class="footerinfo4">
-	   <h4>No More FOMO<br>
-	   Sign up with your email address to receive the latest news!</h4>
-	   <form method="post" action="mailto:khaase2@student.cvtc.edu">
-	   <input type="text" name="email" value="Email">
-	   <input type="submit" value="Submit">
-	   </form>
-	</ul> -->
-    
+    </ul>    
   </div>
   <script>
     let selectedSessions = [];

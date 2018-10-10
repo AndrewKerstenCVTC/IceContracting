@@ -110,7 +110,6 @@ li a:hover {
   width: 50%;
 }
 #sessiontypeh4 {
-  float: left;
   display: inline-block;
   padding: 2px;
   margin-top: 1px;
@@ -126,9 +125,10 @@ li a:hover {
   margin-left: 10px;
   margin-bottom: 10px;
   width: 80px;
-  float: left;
 }
-
+.key{
+  display: inline-block
+}
 #combobox {
   text-align: center;
   background-color: lightpink;
@@ -136,7 +136,6 @@ li a:hover {
   border: 1px solid #d46a6a;
   border-radius: 4px;
   width: 80px;
-  float: left;
   margin-left: 10px;
   margin-bottom: 10px;
 }
@@ -148,13 +147,9 @@ li a:hover {
   border: 1px solid green;
   border-radius: 4px;
   width: 80px;
-  float: left;
   margin-left: 10px;
   margin-bottom: 10px;
 }
-
-
-
 #SkatePic {
   display: block;
   margin-top: 50px;
@@ -167,41 +162,34 @@ li a:hover {
 
 .footer {
     background-color: aliceblue;
-    padding: 5px;
     text-align: center;
 	color: black;
+    padding: 5px;
 	font: 12px "HelveticaNeue";
 	font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
-	width: 100%;
 	display: inline-block;
     margin-top: 5em;
+    width: 40em;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
-.footerinfo1 {
+#footerinfo {
     float: left;
 	text-align: center;
-	display: inline;
+	display: inline-block;
 	alink: black;
 	vlink: black;
 	color: black;
-    width: 30%;
+    width: 50%;
 }
 
-.footerinfo3 {
+#footersocial {
     float: left;
 	text-align: center;
-	display: inline;
-	padding-right: 50px;
-    width: 30%;
+	display: inline-block;
+    width: 50%;
 
-}
-
-.footerinfo4 {
-	float: right;
-	text-align: center;
-	display: inline;
-	padding-right: 50px;
-    width: 30%;
 }
 .social{
   height: 20px;
@@ -229,26 +217,52 @@ li a:hover {
   text-align: left
 }
 #scheduleMain{
-  clear: both;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  clear: both
+}
+.scheduleContent{
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2em;
-  background-color: #c1e3ff;
   width: 96%;
-  box-shadow: 5px 5px 10px #95c8f4;
-  padding-bottom: 1em;
 }
 table{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
-}
-td, th, table{
-  border: 1px solid cadetblue;
+  background-color: white;
+  box-shadow: 5px 5px 10px #95c8f4;
 }
 td, th{
   padding: 5px 0 5px 0;
-  width: 13%
+  width: 13%;
+  margin-left: 5px;
+  background-color: #d5e8f8;
+}
+td{
+  height: 150px
+}
+#sessiontypes{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  text-align: center
+}
+.scheduleContent button{
+  display: inline-block;
+  background-color: aliceblue;
+  box-shadow: 5px 5px 10px #95c8f4;
+  font-size: 1.3em;
+  padding: 4px;
+  border-radius: 7px;
+  margin: 1em; 
+  float: right
+}
+.scheduleContent button:hover{
+  background-color: #fff;
+  box-shadow: 3px 3px 5px #95c8f4;
+  
 }
 #scheduleMain h2{
   font-family: cursive;
@@ -391,14 +405,22 @@ table li {
 .contact-form textarea {
     height: 5em;
 }
-
+.contact-form input[type=text]{
+  height: 3em;
+}
+.contact-form input[type=email]{
+  height: 3em;
+}
 .contact-form input[type=submit], 
 .contact-form input[type=button],
 .contact-form button {
     padding: 1px 15px 5px 15px;
     border: none;
     color: #ffffff;
+    font-size: 1em;
     background-color: #7BA7CC;
+    height: 2em;
+    float: right
 }
 
 .contact-form input[type=submit]:hover, 
@@ -413,7 +435,9 @@ table li {
 	margin: 5px;
 	display: inline;
 }
-
+select{
+  height: 3em;
+}
 #right-float {
 	float: right;
 }
@@ -477,19 +501,19 @@ address > span {
 
 /* about.html styles - start */
 
-table.boardOfDirectors, th, td {
+.boardOfDirectors table, th, td {
     /*border: 1px solid black;*/
     border-collapse: collapse;
     margin: auto;
     text-align: left
 }
-th, td {
+.boardOfDirectors th, td {
     padding: 5px;
+    height: 3em
 }
 
 tr.boardOfDirectorsTR {
 	color: teal;
-	background-color: black;
 }
 #aboutIntro {
 	text-align: left;
