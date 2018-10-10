@@ -392,20 +392,34 @@ table li {
     height: 5em;
 }
 
+.contact-form input {
+	line-height: 2em;
+}
+
 .contact-form input[type=submit], 
 .contact-form input[type=button],
 .contact-form button {
-    padding: 1px 15px 5px 15px;
+    padding: 1.5em 3em 1.5em 3em;
     border: none;
     color: #ffffff;
-    background-color: #7BA7CC;
+    background-color: #356994;
+    width: 100%;
 }
 
 .contact-form input[type=submit]:hover, 
 .contact-form input[type=button]:hover,
 .contact-form button:hover {
-    background-color: #A9CBE8;
+    background-color: #7BA7CC;
     box-shadow: none;
+}
+
+.contact-column a {
+	color: #356994;
+}
+
+.contact-column a:hover {
+	color: #7BA7CC;
+	text-decoration: none;
 }
 
 .contact-form input[type=radio] {
@@ -439,8 +453,20 @@ table li {
     margin: 10px 0 0 0;
 }
 
+#session-times {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+#session-times thead tr th:first-child,
+tbody tr td:first-child {
+	width: 5%;
+	min-width: 10px;
+  	max-width: 10px;
+}
+
 #map {
-	width: 85% !important;
+	width: 75% !important;
 	height: 280px;
 	margin: 0;
 	positon: relative;
@@ -463,15 +489,15 @@ address > span {
 /* summary.html styles */
 
 #summary-container {
-	margin: 75px;
-    padding: 15px 15px 10px 15px;
-    border: 1px solid #d5e8f8;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .summary-column {
     float: left;
-    width: 30%;
+    width: 40%;
     height: 100%;
+    margin: 3em;
 }
 
 

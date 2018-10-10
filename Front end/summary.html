@@ -21,6 +21,7 @@
 		<div class=".row">
 			<div class="summary-column">
 				<h3>Confirm your Reservation Details:</h3>
+					<form>
 		             <ul class="contact-form">
 		                <li>
 		                  <label class="block" for="fName">Full Name:</label>
@@ -51,21 +52,30 @@
 			                </span>
 		                </li>
 		                <li>
-												<button onclick="submit()">Schedule Session(s)</button>
+		                	<label for="agreement" class="inline-label">I have reviewed the ice times I have selected. I understand that hitting submit I will be agreeing to pay the amount listed.</label>
+		                	<input type="checkbox" id="agreement" name="agreement" required>
+		                </li>
+		                <li>
+							<button onclick="submit()">Schedule Session(s)</button>
 		            	</li>
-								</ul>
+					</ul>
+				  </form>
 			</div>
 			<div class="summary-column">
-				<h3>Selected Session Times</h3>
-				<ul>
-					<li>11/01 5:00PM</li>
-					<li>11/03 5:00PM</li>
-					<li>11/10 5:00PM</li>
-					<li>11/15 5:00PM</li>
-					<li>11/20 5:00PM</li>
-					<li>11/25 5:00PM</li>
-					<li>11/26 5:00PM</li>
-				</ul>
+				<h3>Selected Session Times:</h3>
+				<table id="session-times">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Type</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<h3>Total: <span id="orderTotal"></span></h3>
 			</div>
 		</div>
 	</div>
