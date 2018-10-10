@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Niramit:400,300,600);
+
 * {
   margin: 0;
   padding: 0;
@@ -160,6 +162,7 @@ li a:hover {
   text-align: center;
 }
 
+/*
 .footer {
     background-color: aliceblue;
     text-align: center;
@@ -204,9 +207,82 @@ li a:hover {
 #instagram{
   background-image: url("../images/instagram.png");
 }
+
+
+
 .footerinfo3 h4{
   margin-bottom: 8px;
 }
+
+*/
+
+
+/* footer css   */
+.newfooter {
+  padding-top: 60px;
+  padding-top: 60px;
+  display: block;
+  margin-left: 10%;
+}
+
+#footer-address {
+  float: left;
+  font-family: "Niramit", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.525em;
+  margin-right: 22%;
+  margin-top: 4px;
+}
+#follow-us {
+  float: left;
+  
+}
+
+#follow-us h6 {
+  font-size: 20px;
+  font-family: "Niramit", Helvetica, Arial, sans-serif;
+  margin-left: 10px;
+  padding-bottom: 2px;
+  
+}
+
+#facebook2 {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+#facebook2 img {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 3px;
+}
+
+#instagram2 {
+  display: inline-block;
+}
+
+#instagram2 img {
+  width: 65px;
+  height: 65px;
+}
+
+#rights {
+  float: right;
+  font-family: "Niramit", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.525em;
+  margin-right: 10%;
+  margin-left: 15%;
+  margin-top: 4px;
+}
+
+
+
+
+
+/* end of footer css   */
+
 #main{
   width: 90%;
   text-align: center;
@@ -217,11 +293,15 @@ li a:hover {
   text-align: left
 }
 #scheduleMain{
+<<<<<<< HEAD
   margin-bottom: 2em;
   padding-bottom: 1em;
   clear: both
 }
 .scheduleContent{
+=======
+ 
+>>>>>>> 891ead25ddf31bc56d2da8d8a7d48ee750348fac
   margin-left: auto;
   margin-right: auto;
   width: 96%;
@@ -467,7 +547,7 @@ select{
 	width: 85% !important;
 	height: 280px;
 	margin: 0;
-	positon: relative;
+	position: relative;
 	padding-bottom: 3em;
 }
 
