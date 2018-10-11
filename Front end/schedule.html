@@ -87,58 +87,78 @@
   <script>
     let selectedSessions = [];
     let now = new Date(Date.now());
+    let currentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+    buildCalendar(currentMonth.getFullYear(), currentMonth.getMonth());
+    populateCalendar();
 
     // Add the calendar for the current year and month as a child of 'scheduleMain' div.
-    createCalendar(document.getElementById("scheduleMain"), now.getFullYear(), now.getMonth(), function(cell, date) {
-      cell.appendChild(document.createTextNode(date.getDate()));
-      if (!cell.classList.contains("inactive")) {
-        let ul = document.createElement("ul");
-        ul.setAttribute("id", `${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
-        cell.appendChild(ul);
+    function buildCalendar() {
+      let parentElement = document.getElementById("scheduleMain");
+      while (parentElement.firstChild) {
+        parentElement.removeChild(parentElement.firstChild);
       }
-    });
-
-    let url = new URL("http://199.223.235.232:8080/IceServer/Sessions");
-    url.search = new URLSearchParams({
-        "start": new Date(now.getFullYear(), now.getMonth(), 1).getTime(),
-        "end": new Date(now.getFullYear(), now.getMonth() + 1, 1).getTime()
-    });
-
-    // Populate the calendar with session times fetched from the server.
-    fetch(url.toString())
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(sessions) {
-      let typeKey = {
-        "f": "freestyle",
-        "c": "combo",
-        "m": "moves"
-      }
-      for (let session of sessions) {
-        let date = new Date(session.date);
-        let ul = document.getElementById(`${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
-        if (ul) {
-          let li = document.createElement("li");
-          li.classList.add(typeKey[session.type]);
-          //li.setAttribute("data-type", session.type);
-          li.setAttribute("data-session", session.id);
-          li.onclick = selectSession;
-          li.textContent = `${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} `;
-          if (session.attending >= 25) {
-            let span = document.createElement("span");
-            span.textContent = `<span class="sessionFull">${session.attending}/25</span>`;
-            li.appendChild(span);
-          } else {
-            li.textContent += `${session.attending}/25`;
-          }
-          ul.appendChild(li);
+      createCalendar(parentElement, currentMonth.getFullYear(), currentMonth.getMonth(), function(cell, date) {
+        cell.appendChild(document.createTextNode(date.getDate()));
+        if (!cell.classList.contains("inactive")) {
+          let ul = document.createElement("ul");
+          ul.setAttribute("id", `${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+          cell.appendChild(ul);
         }
-      }
-    });
+      });
+    }
+
+    function populateCalendar() {
+      let url = new URL("http://199.223.235.232:8080/IceServer/Sessions");
+      url.search = new URLSearchParams({
+          "start": currentMonth.getTime(),
+          "end": new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1).getTime()
+      });
+
+      // Populate the calendar with session times fetched from the server.
+      fetch(url.toString())
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(sessions) {
+        let typeKey = {
+          "f": "freestyle",
+          "c": "combo",
+          "m": "moves"
+        }
+        for (let session of sessions) {
+          let date = new Date(session.date);
+          let ul = document.getElementById(`${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
+          if (ul) {
+            let li = document.createElement("li");
+            li.classList.add(typeKey[session.type]);
+            if (selectedSessions.indexOf(session.id) > -1) {
+              li.classList.add("selected");
+            }
+            li.setAttribute("data-session", session.id);
+            li.onclick = selectSession;
+            li.textContent = `${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} `;
+            if (session.attending >= 25) {
+              let span = document.createElement("span");
+              span.textContent = `<span class="sessionFull">${session.attending}/25</span>`;
+              li.appendChild(span);
+            } else {
+              li.textContent += `${session.attending}/25`;
+            }
+            ul.appendChild(li);
+          }
+        }
+      });
+    }
+
+    function changeMonth(delta) {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + delta, 1);
+      buildCalendar();
+      populateCalendar();
+    }
 
     function selectSession(event) {
-      let sessionID = event.target.dataset.session;
+      let sessionID = parseInt(event.target.dataset.session, 10);
       let index = selectedSessions.indexOf(sessionID);
       if (index > -1) {
         selectedSessions.splice(index, 1);
@@ -158,6 +178,14 @@
       a.href = `summary.html?${params.toString()}`;
       document.body.appendChild(a);
       a.click();
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("btnNext")) {
+        changeMonth(1);
+      } else if (event.target == document.getElementById("btnPrev")) {
+        changeMonth(-1);
+      }
     }
   </script>
 </body>
