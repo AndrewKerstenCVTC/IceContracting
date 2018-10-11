@@ -83,7 +83,7 @@ function getSessionTimes(selected) {
     let now = new Date(Date.now());
     url.search = new URLSearchParams({
         "start": new Date(now.getFullYear(), now.getMonth(), 1).getTime(),
-        "end": new Date(now.getFullYear(), now.getMonth() + 1, 1).getTime()
+        "end": new Date(now.getFullYear() + 1, now.getMonth(), 1).getTime()
     });
 	return fetch(url.toString())
     .then(function(response) {
