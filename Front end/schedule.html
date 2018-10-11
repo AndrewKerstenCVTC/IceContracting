@@ -21,13 +21,13 @@
   </header>
   <div id="sessiontypes">
 	  <h4 id="sessiontypeh4">Session Types: </h4>
-	    <div class="key" id="freestylebox">
+	    <div class="key freestyle">
 	      Freestyle
 	    </div>
-	    <div class="key" id="combobox">
+	    <div class="key combo">
 	      Combo
 	    </div>
-	    <div class="key" id="movesbox">
+	    <div class="key moves">
 	      Moves
 	    </div>
 	  
@@ -82,23 +82,8 @@
 		<h4>Social</h4>
         <div class="social"><a class="social" id="facebook" href="https://www.facebook.com/eauclairefigureskate" target="_blank"></a></div>
         <div class="social"><a class="social" id="instagram" href="https://www.instagram.com/ec.figureskaters/" target="_blank"></a></div>
-<<<<<<< HEAD
     </ul>    
-  </div>
-=======
-    </ul>
-    
-    <!--<ul class="footerinfo4">
-	   <h4>No More FOMO<br>
-	   Sign up with your email address to receive the latest news!</h4>
-	   <form method="post" action="mailto:khaase2@student.cvtc.edu">
-	   <input type="text" name="email" value="Email">
-	   <input type="submit" value="Submit">
-	   </form>
-	</ul> 
-    
-  </div>
->>>>>>> 891ead25ddf31bc56d2da8d8a7d48ee750348fac-->
+  </div>-->
   <script>
     let selectedSessions = [];
     let now = new Date(Date.now());
@@ -106,7 +91,7 @@
     // Add the calendar for the current year and month as a child of 'scheduleMain' div.
     createCalendar(document.getElementById("scheduleMain"), now.getFullYear(), now.getMonth(), function(cell, date) {
       cell.appendChild(document.createTextNode(date.getDate()));
-      if (cell.getAttribute("class") != "inactive") {
+      if (!cell.classList.contains("inactive")) {
         let ul = document.createElement("ul");
         ul.setAttribute("id", `${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
         cell.appendChild(ul);
@@ -125,12 +110,18 @@
       return response.json();
     })
     .then(function(sessions) {
+      let typeKey = {
+        "f": "freestyle",
+        "c": "combo",
+        "m": "moves"
+      }
       for (let session of sessions) {
         let date = new Date(session.date);
         let ul = document.getElementById(`${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
         if (ul) {
           let li = document.createElement("li");
-          li.setAttribute("data-type", session.type);
+          li.classList.add(typeKey[session.type]);
+          //li.setAttribute("data-type", session.type);
           li.setAttribute("data-session", session.id);
           li.onclick = selectSession;
           li.textContent = `${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} `;
@@ -151,8 +142,10 @@
       let index = selectedSessions.indexOf(sessionID);
       if (index > -1) {
         selectedSessions.splice(index, 1);
+        event.target.classList.remove("selected");
       } else {
         selectedSessions.push(sessionID);
+        event.target.classList.add("selected");
       }
     }
 
