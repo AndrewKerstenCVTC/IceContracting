@@ -140,7 +140,7 @@
             li.textContent = `${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} `;
             if (session.attending >= 25) {
               let span = document.createElement("span");
-              span.textContent = `<span class="sessionFull">${session.attending}/25</span>`;
+              span.textContent = `<span class="sessionFull">${session.attending}/22</span>`;
               li.appendChild(span);
             } else {
               li.textContent += `${session.attending}/25`;

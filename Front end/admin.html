@@ -139,7 +139,7 @@
                             selectedSessions.splice(index, 1);
                         }
                     };
-                    let text = document.createTextNode(`${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} ${session.attending}/25`);
+                    let text = document.createTextNode(`${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} ${session.attending}/22`);
                     li.appendChild(text);
                     ul.appendChild(li);
                 }
@@ -182,7 +182,7 @@
             let li = document.createElement("li");
             li.setAttribute("data-session", 0);
             li.setAttribute("class", inputType.value);
-            li.appendChild(document.createTextNode(`${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} 0/25`));
+            li.appendChild(document.createTextNode(`${date.toLocaleString("en-us", { hour: '2-digit', minute: '2-digit', hour12: true })} 0/22`));
             ul.appendChild(li);
             modal.style.display = "none";
 
