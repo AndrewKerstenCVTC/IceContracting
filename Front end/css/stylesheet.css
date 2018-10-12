@@ -117,41 +117,33 @@ li a:hover {
   margin-top: 1px;
   
 }
-#freestylebox {
+
+.key {
+  display: inline-block;
   text-align: center;
-  background-color: lightgray;
   padding-top: 2px;
   padding: 2px;
-  border: 1px solid grey;
   border-radius: 4px;
   margin-left: 10px;
   margin-bottom: 10px;
   width: 80px;
-}
-.key{
-  display: inline-block
-}
-#combobox {
-  text-align: center;
-  background-color: lightpink;
-  padding: 2px;
-  border: 1px solid #d46a6a;
-  border-radius: 4px;
-  width: 80px;
-  margin-left: 10px;
-  margin-bottom: 10px;
 }
 
-#movesbox {
-  text-align: center;
+.moves {
   background-color: lightgreen;
-  padding: 2px;
   border: 1px solid green;
-  border-radius: 4px;
-  width: 80px;
-  margin-left: 10px;
-  margin-bottom: 10px;
 }
+
+.combo {
+  background-color: lightpink;
+  border: 1px solid #d46a6a;
+}
+
+.freestyle {
+  background-color: lightgray;
+  border: 1px solid grey;
+}
+
 #SkatePic {
   display: block;
   margin-top: 50px;
@@ -401,15 +393,17 @@ td{
   margin-top: 0
 }
 
-table li {
-  border: 1px solid cadetblue;
+#scheduleMain > table li {
   border-radius: 3px;
   margin-left: 0.5em;
   margin-right: 0.5em;
   padding: 0.2em;
   text-align: center;
-  background-color: #d5fdd5;
   cursor: pointer;
+}
+
+#scheduleMain > table li.selected {
+  background-color: #ffd54f;
 }
 
 /* contact.html styles */
