@@ -277,10 +277,6 @@ li a:hover {
   margin-top: 4px;
 }
 
-
-
-
-
 /* end of footer css   */
 
 #main{
@@ -293,15 +289,11 @@ li a:hover {
   text-align: left
 }
 #scheduleMain{
-<<<<<<< HEAD
   margin-bottom: 2em;
   padding-bottom: 1em;
   clear: both
 }
 .scheduleContent{
-=======
- 
->>>>>>> 891ead25ddf31bc56d2da8d8a7d48ee750348fac
   margin-left: auto;
   margin-right: auto;
   width: 96%;
@@ -435,7 +427,7 @@ table li {
 }
 .contact-column {
     float: left;
-    width: 40%;
+    width: 45%;
     height: 100%;
 }
 
@@ -482,38 +474,35 @@ table li {
     width: 98%;
 }
 
+.contact-form select {
+	font-size: 16px;
+}
+
 .contact-form textarea {
     height: 5em;
+    font-size: 16px;
 }
-<<<<<<< HEAD
+
 .contact-form input[type=text]{
   height: 3em;
 }
 .contact-form input[type=email]{
   height: 3em;
 }
-=======
 
 .contact-form input {
-	line-height: 2em;
+	font-size: 16px;
 }
 
->>>>>>> 9b0f7a4b4429ad6d7f694224ad76fb46e575d2eb
 .contact-form input[type=submit], 
 .contact-form input[type=button],
 .contact-form button {
     padding: 1.5em 3em 1.5em 3em;
     border: none;
     color: #ffffff;
-<<<<<<< HEAD
-    font-size: 1em;
     background-color: #7BA7CC;
-    height: 2em;
-    float: right
-=======
     background-color: #356994;
     width: 100%;
->>>>>>> 9b0f7a4b4429ad6d7f694224ad76fb46e575d2eb
 }
 
 .contact-form input[type=submit]:hover, 
@@ -578,7 +567,7 @@ tbody tr td:first-child {
 }
 
 #map {
-	width: 75% !important;
+	width: 85% !important;
 	height: 280px;
 	margin: 0;
 	position: relative;
