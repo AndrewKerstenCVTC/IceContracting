@@ -13,25 +13,25 @@
   text-rendering: optimizeLegibility;
 }
 html{
-  background-color: green;
   background-image: url("ice_background2.jpg");
   background: no-repeat;
   font-family: sans-serif
 }
-
-body {
-  background-color: #d5e8f8;
+p{
+  color: #333;
+  font-size: 1.3em;
 }
-
 #Title {
   font-family: sans-serif;
-  font-size: 25px;
+  font-size: 1.9em;
   letter-spacing: 2px;
   opacity: 0.7;
   text-align: right;
   position: relative;
-  margin-left: 1em;
-  padding-top: 1em;
+  margin-right: 15%;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  float: right;
 }
 
 header {
@@ -39,6 +39,7 @@ header {
   background-repeat: no-repeat;
   background-position: bottom left;
   padding-bottom: 1em;  
+  margin-bottom: 2em;
 }
 
 #logo {
@@ -47,29 +48,41 @@ header {
   display: block;
   margin-left: 50px;
   padding-top: 30px;
-  margin-bottom: 1em
+  margin-bottom: 1em;
+  float: left
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-  display: block;
-  margin: .5em;
-  margin-left: 2em
-}
-
+/*NAV STUFF*/
 li a {
     display: block;
     color: cadetblue;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+} 
+.ul{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  padding-left: 15%;
 }
+#nav li{
+  display: inline-block;
+  font-size: 1.4em;
+  margin-top: 3px;
+  margin-bottom: 3px; 
+  width: 20%;
+}
+#nav{
+  box-shadow: 0 0 40px #f8feff;
+  background-color: #f8feff;
+  width: 100%;
+  clear: both;
+  position: relative;
+  top: 2em;
+}
+/*END NAV STUFF*/
+
 a{
   color: cadetblue;
   text-decoration: none;
@@ -80,21 +93,6 @@ a:hover{
 }
 li a:hover {
     background-color: #89c5f8;
-}
-#nav li{
-  display: inline-block;
-  font-size: 1.4em;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  
-}
-#nav{
-  box-shadow: 0 0 40px #f8feff;
-  background-color: #f8feff;
-  width: 50em;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto
 }
 .Sponsors {
   font-size: 3em;
@@ -222,20 +220,19 @@ li a:hover {
   font-family: "Niramit", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.525em;
-  margin-right: 22%;
+  width: 30%;
   margin-top: 4px;
 }
 #follow-us {
   float: left;
-  
+  width: 30%
 }
 
 #follow-us h6 {
   font-size: 20px;
   font-family: "Niramit", Helvetica, Arial, sans-serif;
   margin-left: 10px;
-  padding-bottom: 2px;
-  
+  padding-bottom: 2px; 
 }
 
 #facebook2 {
@@ -265,7 +262,7 @@ li a:hover {
   font-size: 18px;
   line-height: 1.525em;
   margin-right: 10%;
-  margin-left: 15%;
+  width: 30%;
   margin-top: 4px;
 }
 
@@ -350,17 +347,14 @@ td{
 }
 #gold{
   float: left;
-  background-image: url("../images/gold-final.png");
 }
 #silver{
   margin-left: auto;
   margin-right: auto;
-  background-image: url("../images/silver-final.png");
 }
 #bronze{
   float: right;
   margin-top: 0;
-  background-image: url("../images/bronze-final.png");
 }
 .sponsor{
   width: 294px;
@@ -369,8 +363,6 @@ td{
   background-repeat: no-repeat;
   background-position: top center;
   height: 542px;
-  padding-top: 2em;
-  box-shadow: 8px 8px 14px #23537b;
 }
 .hSponsor{
   font-size: 30px;
@@ -451,7 +443,9 @@ td{
 .contact-form .split-input {
     width: 48%;
 }
-
+#boardOfDirectors{
+  margin-top: 2em;
+}
 .split-label {
     width: 48%;
     display: inline-block;
@@ -560,6 +554,9 @@ tbody tr td:first-child {
   	max-width: 10px;
 }
 
+footer p{
+  font-size: 1em
+}
 #map {
 	width: 85% !important;
 	height: 280px;
@@ -612,9 +609,11 @@ address > span {
 tr.boardOfDirectorsTR {
 	color: teal;
 }
+#about{
+  font-size: 1.2em;
+}
 #aboutIntro {
 	text-align: left;
-	
 }
 
 /* about.html styles - end */
