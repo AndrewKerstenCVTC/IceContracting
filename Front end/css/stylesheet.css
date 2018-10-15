@@ -13,16 +13,22 @@
   text-rendering: optimizeLegibility;
 }
 html{
-  background-image: url("ice_background2.jpg");
+  background-color: white;  
+  background-image: url("ice_background2.jpg");  
   background: no-repeat;
   font-family: sans-serif
 }
+
+body {
+  background-color: white;
+}
+
 p{
   color: #333;
   font-size: 1.3em;
 }
 #Title {
-  font-family: sans-serif;
+  font-family: cursive;
   font-size: 1.9em;
   letter-spacing: 2px;
   opacity: 0.7;
@@ -32,6 +38,7 @@ p{
   margin-top: 2em;
   margin-bottom: 1em;
   float: right;
+  color: #5F6A6A;
 }
 
 header {
@@ -40,6 +47,7 @@ header {
   background-position: bottom left;
   padding-bottom: 1em;  
   margin-bottom: 2em;
+  text-align: center;
 }
 
 #logo {
@@ -55,7 +63,7 @@ header {
 /*NAV STUFF*/
 li a {
     display: block;
-    color: cadetblue;
+    color: #5F6A6A;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -65,6 +73,9 @@ li a {
   margin-right: auto;
   padding: 0;
   padding-left: 15%;
+  width: 90%;
+  background-color: white;
+  color: white;
 }
 #nav li{
   display: inline-block;
@@ -75,7 +86,7 @@ li a {
 }
 #nav{
   box-shadow: 0 0 40px #f8feff;
-  background-color: #f8feff;
+  background-color: white;
   width: 100%;
   clear: both;
   position: relative;
@@ -84,7 +95,7 @@ li a {
 /*END NAV STUFF*/
 
 a{
-  color: cadetblue;
+  color: #89c5f8;
   text-decoration: none;
 }
 a:hover{
@@ -96,7 +107,7 @@ li a:hover {
 }
 .Sponsors {
   font-size: 3em;
-  color: cadetblue;
+  color: #5F6A6A;
   font-family: cursive;
   margin-bottom: 10px
 }
@@ -208,44 +219,24 @@ li a:hover {
 
 
 /* footer css   */
-
-
-
 .newfooter {
-  background-image: url("../images/ice-background-1.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 150px;
-  margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 6px;
-  position: relative;
-  z-index: -100px;
+  padding-top: 60px;
+  padding-top: 60px;
+  display: block;
+  margin-left: 10%;
 }
-
-
 
 #footer-address {
   float: left;
   font-family: "Niramit", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.525em;
   width: 30%;
-  padding-bottom: 10px;
-  margin-left: 2%;
-  margin-top: 18px;
-  display: inline-block;
-  
-  
-
+  margin-top: 4px;
 }
 #follow-us {
   float: left;
-  width: 30%;
-  display: inline-block;
-  text-align:  center;
-  margin-top: 18px;
+  width: 30%
 }
 
 #follow-us h6 {
@@ -253,20 +244,6 @@ li a:hover {
   font-family: "Niramit", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   padding-bottom: 2px; 
-  text-align:  center;
-  
-}
-
-#rights {
-  float: right;
-  font-family: "Niramit", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1.525em;
-  width: 30%;
-  margin-top: 25px;
-  display: inline-block;
-  text-align: right;
-  margin-right: 2%;
 }
 
 #facebook2 {
@@ -290,7 +267,15 @@ li a:hover {
   height: 65px;
 }
 
-
+#rights {
+  float: right;
+  font-family: "Niramit", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.525em;
+  margin-right: 10%;
+  width: 30%;
+  margin-top: 4px;
+}
 
 /* end of footer css   */
 
@@ -640,6 +625,52 @@ tr.boardOfDirectorsTR {
 }
 #aboutIntro {
 	text-align: left;
+}
+
+.video-container {
+  position: relative;
+}
+video {
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+  opacity: 0.7;
+}
+.overlay-desc {
+  background: rgba(0,0,0,0);
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  color: white;
+  font-family: cursive;
+  font-size: 4vw;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+  color: #5F6A6A;
+}
+
+p {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
+#aboutIntro {
+  color: #5F6A6A;
+}
+
+h3 {
+  color: #5F6A6A;
+  font-size: 30px;
 }
 
 /* about.html styles - end */
