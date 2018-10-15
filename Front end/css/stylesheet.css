@@ -166,80 +166,45 @@ li a:hover {
   text-align: center;
 }
 
-/*
-.footer {
-    background-color: aliceblue;
-    text-align: center;
-	color: black;
-    padding: 5px;
-	font: 12px "HelveticaNeue";
-	font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
-	display: inline-block;
-    margin-top: 5em;
-    width: 40em;
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-#footerinfo {
-    float: left;
-	text-align: center;
-	display: inline-block;
-	alink: black;
-	vlink: black;
-	color: black;
-    width: 50%;
-}
-
-#footersocial {
-    float: left;
-	text-align: center;
-	display: inline-block;
-    width: 50%;
-
-}
-.social{
-  height: 20px;
-  width: 20px;
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px
-}
-#facebook{
-  background-image: url("../images/facebook.png");
-}
-#instagram{
-  background-image: url("../images/instagram.png");
-}
-
-
-
-.footerinfo3 h4{
-  margin-bottom: 8px;
-}
-
-*/
-
 
 /* footer css   */
+
+
 .newfooter {
-  padding-top: 60px;
-  padding-top: 60px;
-  display: block;
-  margin-left: 10%;
+  background-image: url("../images/ice-background-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  position: relative;
+  z-index: -100px;
 }
+
+
 
 #footer-address {
   float: left;
   font-family: "Niramit", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.525em;
   width: 30%;
-  margin-top: 4px;
+  padding-bottom: 10px;
+  margin-left: 2%;
+  margin-top: 18px;
+  display: inline-block;
+  
+  
+
 }
 #follow-us {
   float: left;
-  width: 30%
+  width: 30%;
+  display: inline-block;
+  text-align:  center;
+  margin-top: 18px;
 }
 
 #follow-us h6 {
@@ -247,6 +212,20 @@ li a:hover {
   font-family: "Niramit", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   padding-bottom: 2px; 
+  text-align:  center;
+  
+}
+
+#rights {
+  float: right;
+  font-family: "Niramit", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.525em;
+  width: 30%;
+  margin-top: 25px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 2%;
 }
 
 #facebook2 {
@@ -268,16 +247,6 @@ li a:hover {
 #instagram2 img {
   width: 65px;
   height: 65px;
-}
-
-#rights {
-  float: right;
-  font-family: "Niramit", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.525em;
-  margin-right: 10%;
-  width: 30%;
-  margin-top: 4px;
 }
 
 /* end of footer css   */
