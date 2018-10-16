@@ -24,11 +24,11 @@
 	  <!--<img src="images/ice_background2.jpg">-->
 	</header>
 	<div id="summary-container">
-		<div class=".row">
+		<div class="row">
 			<div class="summary-column">
-				<h3>Confirm your Reservation Details:</h3>
-					<form>
+					<form action="" method="get">
 		             <ul class="contact-form">
+		             <h3>Confirm your Reservation Details:</h3>
 		                <li>
 		                  <label class="block" for="fName">Full Name:</label>
 		                  <input type="text" id ="fName" name="fName" class="split-input" required>
@@ -62,12 +62,12 @@
 		                	<input type="checkbox" id="agreement" name="agreement" required>
 		                </li>
 		                <li>
-							<button onclick="submit()">Schedule Session(s)</button>
+							<button onclick="submitSession()">Schedule Session(s)</button>
 		            	</li>
 					</ul>
 				  </form>
 			</div>
-			<div class="summary-column">
+			<div class="summary-column" id="summary-selections">
 				<h3>Selected Session Times:</h3>
 				<table id="session-times">
 					<thead>
@@ -85,21 +85,7 @@
 			</div>
 		</div>
 	</div>
-<!--<<<<<<< HEAD
-    <div class="footer">	
-	<ul id="footerinfo">
-		<h4>Info</h4>
-		<a href="about.html">About Us</a><br>
-		<a href="contact.html">Contact Us</a><br>
-    </ul>    
-	<ul id="footersocial">
-		<h4>Social</h4>
-        <div class="social"><a class="social" id="facebook" href="https://www.facebook.com/eauclairefigureskate" target="_blank"></a></div>
-        <div class="social"><a class="social" id="instagram" href="https://www.instagram.com/ec.figureskaters/" target="_blank"></a></div>
-    </ul>    
-  </div>
-=======-->
-      <!--<footer class="newfooter">
+      <footer class="newfooter">
         <div id="footer-address">
           <p>
           915 Menomonie St.
@@ -126,15 +112,14 @@
           </p>
         </div>
       </footer>
->>>>>>> 891ead25ddf31bc56d2da8d8a7d48ee750348fac-->
-	 <script src="js/summary.js"></script>
-	 <script>
-		 let params = new URLSearchParams(window.location.search);
-		 function submit() {
+      <script>
+      	function submitSession() {
+      		let params = new URLSearchParams(window.location.search);
+      		alert("here");
 			fetch("http://199.223.235.232:8080/IceServer/Register", {
-        method: 'POST',
-        body: JSON.stringify({
-          "member": {
+        		method: 'POST',
+        		body: JSON.stringify({
+         				"member": {
 						"usfsn": document.getElementById("usfsaId").value,
 						"fname": document.getElementById("fName").value,
 						"lname": document.getElementById("lName").value,
@@ -142,22 +127,23 @@
 						"phone": document.getElementById("phone").value,
 						"coach": document.getElementById("coach").value,
 						"isMember": document.getElementById("clubMember").checked
-					},
-          "sessions": params.getAll("session")
-        }),
-        headers: {
-          'Content-Type': 'text/plain'
-        }
-      }).then(function(response) {
-        console.log(response.status);
+				},
+          		"sessions": params.getAll("session")
+	        	}),
+	        	headers: {
+	          		'Content-Type': 'text/plain'
+	        	}
+      		}).then(function(response) {
+        		console.log(response.status);
 				if (response.status == 200) {
 					alert("Registration successful.");
 				} else {
 					alert("Registration failed.");
 				}
-      });
+     		});
 			return false;
-		}
-	 </script>
+      	}
+      </script>
+	 <script src="js/summary.js"></script>
  </body>
  </html>
