@@ -274,6 +274,7 @@ table{
   margin-bottom: 2em;
   background-color: #d5e8f8;
   box-shadow: 5px 5px 10px #c0cdde;
+  width: 100%
 }
 td, th{
   padding: 5px 0 5px 0;
@@ -283,7 +284,7 @@ td, th{
   border: solid 2px #d5e8f8;
 }
 td{
-  height: 150px
+  height: 130px
 }
 #sessiontypes{
   display: block;
@@ -454,6 +455,10 @@ td{
 #boardOfDirectors{
   margin-top: 2em;
 }
+#hDirect{
+  height: 1.5em;
+  margin-top: 1em
+}
 .split-label {
     width: 48%;
     display: inline-block;
@@ -614,17 +619,16 @@ address > span {
 
 /* about.html styles - start */
 
-.boardOfDirectors table, th, td {
+.boardOfDirectors table, .boardOfDirectors th, .boardOfDirectors td {
     /*border: 1px solid black;*/
     border-collapse: collapse;
     margin: auto;
     text-align: left
 }
-.boardOfDirectors th, td {
+.boardOfDirectors th, .boardOfDirectors td {
     padding: 5px;
     height: 3em
 }
-
 tr.boardOfDirectorsTR {
 	color: teal;
 }

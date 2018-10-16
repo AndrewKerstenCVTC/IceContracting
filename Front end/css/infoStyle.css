@@ -131,11 +131,11 @@ body {
 
 #register {
   float: left;
-  margin-left: 10px;
+  margin-left: 15em;
   width: 100px; 
   height: 32px; 
   line-height: 30px;
-  background: teal;
+  background: cadetblue;
   color: white;
   font-weight: 700;
   text-align: center;
