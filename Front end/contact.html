@@ -126,13 +126,13 @@
                         map: map,
                         position: place.geometry.location
                     });
-                    //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                    //        place.formatted_address + '<br>' +
-                    //        '715-874-4877' + '</div>');
-                    //google.maps.event.addListener(marker, 'click', function() {
-                    //    infowindow.open(map, this);
-                    //});
-                    //infowindow.open(map, marker);
+                    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                            place.formatted_address + '<br>' +
+                            '715-874-4877' + '</div>');
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.open(map, this);
+                    });
+                    infowindow.open(map, marker);
                 }
             });
         }
