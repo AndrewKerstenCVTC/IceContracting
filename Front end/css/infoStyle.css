@@ -46,21 +46,9 @@ body {
 
 .container {
   /*max-width: 400px; */
-  width: 930px;
+  width: 430px;
   margin: 0 auto;
   position: relative;
-}
-
-#first {
-  float: left;
-  margin-right: 25px;
-}
-
-#second {
-  float: both;
-  padding-top: 30px;
-  
-  
 }
 
 #skatercontact input[type="text"],
@@ -73,6 +61,7 @@ body {
 
 
 #skatercontact {
+  display: none;
   background: #F9F9F9;
   padding: 20px;
   margin: 30px 0;
@@ -136,5 +125,43 @@ body {
   outline: 0;
   border: 1px solid #aaa;
 }
+
+/*start of css for modal*/
+
+
+#register {
+  float: left;
+  margin-left: 10px;
+  width: 100px; 
+  height: 32px; 
+  line-height: 30px;
+  background: teal;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+#register:hover { background: #666; }
+#register:active { background: #444; }
+
+
+#close {
+  color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* end of css for modal*/
 
 

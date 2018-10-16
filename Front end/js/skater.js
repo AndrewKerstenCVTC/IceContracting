@@ -1,34 +1,24 @@
-function passing(){  var fName = document.getElementById("fName").value;
-  var lName = document.getElementById("lName").value;
-  var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
-  var usfsaId = document.getElementById("usfsaID").value;
-  var coach = document.getElementById("coach").value;
-  var clubMember = document.querySelector('input[clubMember="clubMember"]:checked');
-  var nonMember = document.querySelector('input[nonMember="nonMember"]:checked');
-  window.location.href="schedule.html";
-
-}
-
-function main(){
+$(function(){
   
-  document.getElementByID("skatercontact").addEventListener("submit", passingSkaterForm);
-  
-  
-  
-}
-
-function passingSkaterForm(event){
-  event.preventDefault();
-  
-  var fName = document.getElementById("fName").value;
-  var lName = document.getElementById("lName").value;
-  var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
-  var usfsaId = document.getElementById("usfsaID").value;
-  var coach = document.getElementById("coach").value;
-  var clubMember = document.querySelector('input[clubMember="clubMember"]:checked');
-  var nonMember = document.querySelector('input[nonMember="nonMember"]:checked');
-  window.location.href="schedule.html";
-  
-}
+  $('#register').click(function() {
+    $('#skatercontact').fadeIn(1800);
+  })
+  $(document).mouseup(function (e) {
+    var newcontainer = $("#skatercontact");
+    
+    // if the target of the click isn't the container...
+    // ... nor a descendant of the container
+    if (!newcontainer.is(e.target) && newcontainer.has(e.target).length === 0)  // ... nor a descendant of the container
+    {
+        newcontainer.fadeOut(1000);
+    }
+  });
+   
+  $('#close').click(function() {
+    
+   var newcontainer = $("#skatercontact");
+    {
+        newcontainer.fadeOut(1000);
+    }
+  })
+});
