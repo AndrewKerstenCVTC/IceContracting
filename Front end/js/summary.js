@@ -68,13 +68,21 @@ function calculateTotal(sessions, member) {
 
 function buildSessionList(sessions) {
 	var table = document.getElementById('session-times');
+	var typeKey = {
+	          "f": "freestyle",
+	          "c": "combo",
+	          "m": "moves"
+	}
 	for (var i = 0; i < sessions.length; ++i) {
 		var ref = table.getElementsByTagName('tbody')[0];
 		var row = ref.insertRow(ref.rows.length);
 		row.insertCell(0).appendChild(document.createTextNode(iceSkate()));
 		row.insertCell(1).appendChild(document.createTextNode(toDate(sessions[i].date)));
 		row.insertCell(2).appendChild(document.createTextNode(toTime(sessions[i].date)));
-		row.insertCell(3).appendChild(document.createTextNode(sessions[i].type.toUpperCase()));
+		var typeCell = row.insertCell(3);
+		var type = sessions[i].type;
+		typeCell.appendChild(document.createTextNode(capitalizeFirstLetter(typeKey[type])));
+		typeCell.className = typeKey[type];
 	}
 }
 
@@ -100,6 +108,10 @@ function getSessionTimes(selected) {
     	}
     	return sessionDetails;
     });
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function iceSkate() {

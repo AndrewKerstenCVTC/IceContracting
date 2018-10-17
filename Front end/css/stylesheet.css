@@ -563,6 +563,19 @@ select{
 	margin-bottom: 3em;
 }
 
+#session-times th {
+	text-align: center;
+	color: #5F6A6A;
+	font-size: 1.5em;
+}
+
+#session-times td {
+	text-align: left;
+	color: #5F6A6A;
+	font-size: 1.25em;
+	padding-left: .5em;
+}
+
 #session-times thead tr th:first-child,
 tbody tr td:first-child {
 	width: 5%;
