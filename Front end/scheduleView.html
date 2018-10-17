@@ -153,7 +153,10 @@
         parentElement.removeChild(parentElement.firstChild);
       }
       createCalendar(parentElement, currentMonth.getFullYear(), currentMonth.getMonth(), function(cell, date) {
-        cell.appendChild(document.createTextNode(date.getDate()));
+        let p = document.createElement("p");
+        p.textContent = date.getDate();
+        cell.appendChild(p);
+        //cell.appendChild(document.createTextNode(date.getDate()));
         if (!cell.classList.contains("inactive")) {
           let ul = document.createElement("ul");
           ul.setAttribute("id", `${date.toLocaleString("en-us", { month: "short" })}${date.getDate()}`);
