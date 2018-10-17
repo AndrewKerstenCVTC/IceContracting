@@ -26,7 +26,6 @@
 	<div id="summary-container">
 		<div class="row">
 			<div class="summary-column">
-					<form action="" method="get">
 		             <ul class="contact-form">
 		             <h3>Confirm your Reservation Details:</h3>
 		                <li>
@@ -65,7 +64,6 @@
 							<button onclick="submitSession()">Schedule Session(s)</button>
 		            	</li>
 					</ul>
-				  </form>
 			</div>
 			<div class="summary-column" id="summary-selections">
 				<h3>Selected Session Times:</h3>
@@ -114,7 +112,7 @@
       </footer>
       <script>
       	function submitSession() {
-      		let params = new URLSearchParams(window.location.search);
+					let params = new URLSearchParams(window.location.search);
 			fetch("http://199.223.235.232:8080/IceServer/Register", {
         		method: 'POST',
         		body: JSON.stringify({
@@ -136,6 +134,7 @@
         		console.log(response.status);
 				if (response.status == 200) {
 					alert("Registration successful.");
+					window.location.href = "schedule.html";
 				} else {
 					alert("Registration failed.");
 				}
