@@ -3,8 +3,7 @@
 <head>
   <title>ECFigureSkate</title>
   <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-    
-
+  <link href="css/slideshow.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
@@ -14,7 +13,7 @@
         
         <ul id="nav">
           <div class="ul">
-            <li><a class="active" href="IceSkating.html">Home</a></li>
+            <li><a href="IceSkating.html">Home</a></li>
             <li><a href="scheduleView.html">Schedule</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="about.html">About</a></li>
@@ -26,6 +25,36 @@
 	</header>
   
   <div id="main">
+    
+    
+    <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="images/slideshow/2018-10-09%2006.41.46-1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="images/slideshow/2018-10-09%2006.42.06.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="images/slideshow/2018-10-09%2006.48.09.jpg" style="width:100%">
+  </div>  
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="images/slideshow/2018-10-09%2006.48.51.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+    
     <section id= "about">
       <p id="aboutIntro">Since 1979, the <strong>Eau Claire Figure Skating Club</strong> has been serving the community by providing skating instruction, hosting skating competitions and the yearly skating show and offering various club activities to both the young and old in Western Wisconsin.</p><br>
       <p id="aboutIntro">The Eau Claire Figure Skating Club is a proud partner with US Figure Skating, The Professional Skaters Association and Learn To Skate USA.<br>
@@ -138,7 +167,25 @@
           </p>
         </div>
     </footer>
+    <script>
+      var slideIndex = 1;
+showSlides(slideIndex);
+
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+    </script>
   </body>
+   
 </html>
   <!-- Idk what's going on here but it was invalid html so I commented it out -sks
 /*<<<<<<< HEAD
